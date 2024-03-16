@@ -10,6 +10,7 @@ namespace Mobile_Application.ViewModels
 
         public ICommand NavigateToMainUiCommand { get; set; }
         public ICommand ValidateCommand => new Command(Validate);
+        
 
         public string Email
         {
