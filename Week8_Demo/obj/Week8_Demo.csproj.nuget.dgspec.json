@@ -90,6 +90,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -145,6 +149,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -200,6 +208,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -250,6 +262,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [

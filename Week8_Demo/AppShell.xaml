@@ -15,7 +15,7 @@
     Shell.TabBarUnselectedColor="Azure"
     xaml:MauiMicro.Autowire="True"
     x:DataType="viewModels:AppShellViewModel"
-    Title="Week7_Demo">
+    Title="Mobile_Application">
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
