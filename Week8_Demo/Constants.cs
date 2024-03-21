@@ -23,6 +23,7 @@ namespace Mobile_Application
         public static string DatabasePath =>
             Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
 
+
         // postgres://postgres.kmqqbacbnpppertamtdn:[S%r&cYcy-cWr4,T]@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
     }
 }
