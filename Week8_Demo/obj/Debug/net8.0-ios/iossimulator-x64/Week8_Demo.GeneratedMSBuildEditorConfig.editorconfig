@@ -70,6 +70,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.Q
 build_metadata.AdditionalFiles.TargetPath = Views\QuoteGeneratorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\QuoteGeneratorPage.xaml
 
+[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegisterPage.xaml
+
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/SavedQuotes.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.SavedQuotes.xaml
