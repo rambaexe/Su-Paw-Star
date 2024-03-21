@@ -66,4 +66,10 @@
         <PackageReference Include="supabase-csharp" Version="0.16.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <MauiXaml Update="Views\RegisterPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+    </ItemGroup>
+
 </Project>

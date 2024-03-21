@@ -9,6 +9,7 @@ namespace Mobile_Application.ViewModels
         private readonly IQuoteService _quoteService;
         public ICommand CalculateBmiCommand { get; set; }
         public ICommand NavigateToClassicMauiPageCommand { get; set; }
+
         public double Bmi
         {
             get => Get<double>();
