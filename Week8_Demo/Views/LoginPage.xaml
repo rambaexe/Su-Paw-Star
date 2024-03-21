@@ -9,7 +9,7 @@
              Shell.FlyoutBehavior="Disabled"
              Title="Login"
              BackgroundColor="FloralWhite"
-             Shell.BackgroundColor="FloralWhite">
+             Shell.BackgroundColor="RoyalBlue">
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Consolas" />
@@ -74,6 +74,7 @@
                         x:Name="LoginButton"
                         Command="{Binding NavigateToMainUiCommand}"
                         Text="Login"
+                        FontSize="16"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="FillAndExpand" />
 
