@@ -3346,11 +3346,7 @@ target triple = "i686-unknown-linux-android21"
 @.env.4 = private unnamed_addr constant [15 x i8] c"MONO_LOG_LEVEL\00", align 1
 @.env.5 = private unnamed_addr constant [5 x i8] c"info\00", align 1
 @.env.6 = private unnamed_addr constant [17 x i8] c"XAMARIN_BUILD_ID\00", align 1
-<<<<<<< HEAD
 @.env.7 = private unnamed_addr constant [37 x i8] c"fb53425e-2e30-4a3c-a76d-9503840148dd\00", align 1
-=======
-@.env.7 = private unnamed_addr constant [37 x i8] c"d6919e33-ad32-443c-907f-c8a50c561828\00", align 1
->>>>>>> d6aa9dcd030ec8e155f1bd3df249a2422fc68161
 @.env.8 = private unnamed_addr constant [28 x i8] c"XA_HTTP_CLIENT_HANDLER_TYPE\00", align 1
 @.env.9 = private unnamed_addr constant [42 x i8] c"Xamarin.Android.Net.AndroidMessageHandler\00", align 1
 @.env.10 = private unnamed_addr constant [29 x i8] c"__XA_PACKAGE_NAMING_POLICY__\00", align 1
