@@ -25,6 +25,11 @@ namespace Mobile_Application.Models
                 return _instance;
             }
         }
+
+        public void Clear()
+        {
+            _instance = null;
+        }
     }
 }
 

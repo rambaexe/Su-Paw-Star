@@ -88,7 +88,7 @@ namespace Mobile_Application.ViewModels
                     CreatedAt = DateTime.Now.ToString(),
                     FirstandLastName = FirstandLastName
                 };
-                Console.WriteLine(Email);
+
                 try
                 {
                     var response2 = await _supabaseClient.From<UserSuperbase>().Insert(model);
