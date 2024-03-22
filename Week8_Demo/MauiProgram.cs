@@ -39,7 +39,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<IQuoteService, QuoteRealService>();
         builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 
-
         return builder.Build();
     }
 }

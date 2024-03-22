@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
@@ -10,11 +9,69 @@
              Title="Register"
              BackgroundColor="FloralWhite"
              Shell.BackgroundColor="RoyalBlue">
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </ContentPage.Resources>
+
+    <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" Margin="20">
+        <Label Text="🐾 🐕 🐾"
+       HorizontalOptions="Center"
+       FontSize="45"
+       Padding="10"
+       FontAttributes="Bold" />
+
+        <Label Text="Account Registration"
+           HorizontalOptions="Center"
+           FontSize="20"
+           FontAttributes="Bold"/>
+
+        <Frame CornerRadius="10" Padding="15" Margin="0,10,0,0" BackgroundColor="LightGray">
+            <FlexLayout Direction="Column">
+
+                    <Label Text="First and Last Name" FontSize="15" Margin="0,0,0,5" FontAttributes="Bold" />
+                    <Frame CornerRadius="10" Padding="5" Margin="0,0,0,10" BackgroundColor="White">
+                        <Entry Placeholder="Enter your first and last name."
+                            Text="{Binding FirstandLastName}"
+                            Keyboard="Email" />
+                    </Frame>
+                
+                <Label Text="Email" FontSize="15" Margin="0,0,0,5" FontAttributes="Bold" />
+                <Frame CornerRadius="10" Padding="5" Margin="0,0,0,10" BackgroundColor="White">
+                    <Entry Placeholder="Enter your email address."
+                       Text="{Binding Email}"
+                       Keyboard="Email" />
+                </Frame>
+
+                <Label Text="Password" FontSize="15" Margin="0,0,0,5" FontAttributes="Bold" />
+                <Frame CornerRadius="10" Padding="5" Margin="0,0,0,10" BackgroundColor="White">
+                    <Entry Placeholder="Type in your password."
+                       Text="{Binding Password}"
+                       IsPassword="True" />
+                </Frame>
+
+                <Label Text="Confirm Password" FontSize="15" Margin="0,0,0,5" FontAttributes="Bold" />
+                <Frame CornerRadius="10" Padding="5" Margin="0,0,0,10" BackgroundColor="White">
+                    <Entry Placeholder="Confirm your password."
+                       Text="{Binding ConfirmPassword}"
+                       IsPassword="True" />
+                </Frame>
+
+                <Button Text="Register"
+                    Padding="10"
+                    Command="{Binding RegisterCommand}" />
+            </FlexLayout>
+        </Frame>
+    </FlexLayout>
+
 </ContentPage>

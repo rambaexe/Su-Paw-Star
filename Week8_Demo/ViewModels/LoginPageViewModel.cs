@@ -13,7 +13,6 @@ namespace Mobile_Application.ViewModels
 
         public ICommand NavigateToMainUiCommand { get; set; }
         public ICommand NavigateToRegisterPageCommand { get; set; }
-        public ICommand ValidateCommand => new Command(Validate);
         
 
         public string Email
@@ -39,7 +38,6 @@ namespace Mobile_Application.ViewModels
         public LoginPageViewModel(ViewModelContext context, IAppState appState): base(context)
         {
             _supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
-            validateCommand = new Command(Validate);
 
             NavigateToMainUiCommand = new Command(execute: async () => await NavigateToMainUI(),
                 () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password));
@@ -72,12 +70,18 @@ namespace Mobile_Application.ViewModels
                 };
 
                 var response = await _supabaseClient.Auth.SignIn(Email, Password);
+
                 // check if the user is authenticated
                 if (response.User == null)
                 {
                     await Shell.Current.DisplayAlert("Sign in failed", "Credentials couldn't be found. Please try again or register for an account.", "OK");
                     return;
                 }
+
+                // set user instance using singleton
+                Models.User.Instance.Email = Email;
+                Models.User.Instance.Password = Password;
+
                 await Shell.Current.GoToAsync("//BmiPage");
             }
             catch (Exception ex)
@@ -85,14 +89,6 @@ namespace Mobile_Application.ViewModels
                 // display popup with general error message
                 await Shell.Current.DisplayAlert("Sign in failed", "An unexpected error occurred. Please try again or register for an account.", "OK");
             }
-        }
-
-        private Command validateCommand;
-
-        private void Validate()
-        {
-            
-            //some validation
         }
     }
 }
