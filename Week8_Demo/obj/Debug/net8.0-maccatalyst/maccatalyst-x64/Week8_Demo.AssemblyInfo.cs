@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Week8_Demo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3d664d07d29066957ca7fd09c0d917a7b43a361d")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+68beb318e495127955196032b9f71e0dfc16e2ac")]
+>>>>>>> authentication_feature
 [assembly: System.Reflection.AssemblyProductAttribute("Week8_Demo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Week8_Demo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
