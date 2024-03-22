@@ -1,6 +1,8 @@
-﻿using System.Windows.Input;
+﻿using System.Security.Cryptography;
+using System.Windows.Input;
 using MauiMicroMvvm;
 using Mobile_Application.Interfaces;
+using Mobile_Application.Models;
 using Supabase;
 
 namespace Mobile_Application.ViewModels
@@ -10,8 +12,17 @@ namespace Mobile_Application.ViewModels
         private readonly Supabase.Client _supabaseClient;
         private readonly IAppState _appState;
 
-        public ICommand NavigateToMainUiCommand { get; set; }
-        public ICommand ValidateCommand => new Command(Validate);
+        public ICommand RegisterCommand { get; set; }
+
+        public string FirstandLastName
+        {
+            get => Get<string>();
+            set
+            {
+                Set(value);
+                (RegisterCommand as Command).ChangeCanExecute();
+            }
+        }
 
         public string Email
         {
@@ -19,7 +30,7 @@ namespace Mobile_Application.ViewModels
             set
             {
                 Set(value);
-                (NavigateToMainUiCommand as Command).ChangeCanExecute();
+                (RegisterCommand as Command).ChangeCanExecute();
             }
         }
 
@@ -29,52 +40,74 @@ namespace Mobile_Application.ViewModels
             set
             {
                 Set(value);
-                (NavigateToMainUiCommand as Command).ChangeCanExecute();
+                (RegisterCommand as Command).ChangeCanExecute();
+            }
+        }
+
+        public string ConfirmPassword
+        {
+            get => Get<string>();
+            set
+            {
+                Set(value);
+                (RegisterCommand as Command).ChangeCanExecute();
             }
         }
 
         public RegisterPageViewModel(ViewModelContext context, IAppState appState) : base(context)
         {
             _supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
-            //ValidateCommand = new Command(Validate);
-
-            NavigateToMainUiCommand = new Command(execute: async () => await NavigateToMainUI(),
-                               () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password));
             _appState = appState;
+
+            RegisterCommand = new Command(execute: async () => await Register(),
+                                          canExecute: () => !string.IsNullOrEmpty(FirstandLastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(ConfirmPassword));
         }
 
-        public override void OnAppearing()
+        private async Task Register()
         {
-            base.OnAppearing();
-            Email = string.Empty;
-            Password = string.Empty;
-        }
-
-        private async Task NavigateToMainUI()
-        {
-            // get user details
-            var user = new Models.User()
+            if (string.IsNullOrEmpty(FirstandLastName) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
             {
-                Email = Email,
-                Password = Password
-            };
-
-            var response = await _supabaseClient.Auth.SignUp(Email, Password);
-            
-            if (response.User != null)
-            {
-                await Shell.Current.DisplayAlert("Sign up failed", "Account couldn't be created. Please try again.", "OK");
-
+                await Shell.Current.DisplayAlert("Error", "Please fill in all fields.", "OK");
+                return;
             }
-            else
-            {
-                await Shell.Current.GoToAsync("//MainUI");
-            }
-        }
 
-        private void Validate()
-        {
-            (NavigateToMainUiCommand as Command).ChangeCanExecute();
+            if (Password != ConfirmPassword)
+            {
+                await Shell.Current.DisplayAlert("Error", "Passwords do not match.", "OK");
+                return;
+            }
+
+            try
+            {
+                var response = await _supabaseClient.Auth.SignUp(Email, Password);
+                // get user id from response
+               
+                var model = new UserSuperbase
+                {
+                    Email = Email,
+                    CreatedAt = DateTime.Now.ToString(),
+                    FirstandLastName = FirstandLastName
+                };
+                Console.WriteLine(Email);
+                try
+                {
+                    var response2 = await _supabaseClient.From<UserSuperbase>().Insert(model);
+                    if(response2 == null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "User not created", "OK");
+                    }
+                    await Shell.Current.DisplayAlert("Account Registered", "Sign Up Completed. You can now sign in with your credentials.", "OK");
+                    await Shell.Current.Navigation.PopAsync();
+                }
+                catch (Exception e)
+                {
+                    await Shell.Current.DisplayAlert("Error", e.Message, "OK");
+                }
+            }
+            catch (Exception e)
+            {
+                await Shell.Current.DisplayAlert("Error", e.Message, "OK");
+            }
         }
     }
 }
