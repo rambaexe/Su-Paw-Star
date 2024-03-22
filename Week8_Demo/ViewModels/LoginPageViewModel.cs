@@ -3,6 +3,7 @@ using MauiMicroMvvm;
 using Mobile_Application.Interfaces;
 using Supabase;
 using Supabase.Interfaces;
+using Mobile_Application.Models;
 
 namespace Mobile_Application.ViewModels
 {
@@ -79,8 +80,25 @@ namespace Mobile_Application.ViewModels
                 }
 
                 // set user instance using singleton
+                Models.User.Instance.Clear();
+
                 Models.User.Instance.Email = Email;
                 Models.User.Instance.Password = Password;
+
+                // get the user's name from the database
+                var result = await _supabaseClient.From<UserSuperbase>().Get();
+                var records = result.Models;
+
+                for(int i = 0; i < records.Count; i++)
+                {
+                    if (records[i].Email == Email)
+                    {
+                        Models.User.Instance.FirstandLastName = records[i].FirstandLastName;
+                    }
+                }
+
+                Console.WriteLine("User name: " + Models.User.Instance.FirstandLastName);
+
 
                 await Shell.Current.GoToAsync("//BmiPage");
             }
