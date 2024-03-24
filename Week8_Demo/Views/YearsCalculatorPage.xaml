@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:Mobile_Application.ViewModels"
+             x:Class="Mobile_Application.Views.YearsCalculatorPage"
+             x:DataType="viewModels:YearsCalculatorViewModel"
+             xaml:MauiMicro.Autowire="True"
+            Shell.FlyoutBehavior="Disabled"
+            Title="Dog to Human Age Calculator"
+            BackgroundColor="FloralWhite"
+            Shell.BackgroundColor="RoyalBlue">
+    <VerticalStackLayout>
+        <Label 
+        Text="Welcome to Dog to Human Age Calculator!"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Label 
+        Text="Enter your dog's age:"
+        VerticalOptions="Start" 
+        HorizontalOptions="Start" />
+        <Entry 
+        x:Name="DogAgeEntry"
+        Placeholder="Dog's age"
+        Keyboard="Numeric"
+        VerticalOptions="Start" 
+        HorizontalOptions="FillAndExpand" />
+        <Label 
+        Text="Select your dog's size:"
+        VerticalOptions="Start" 
+        HorizontalOptions="Start" />
+        <Picker 
+        x:Name="DogSizePicker"
+        Title="Select Dog Size"
+        VerticalOptions="Start" 
+        HorizontalOptions="FillAndExpand">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Small</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Large</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button 
+        Text="Calculate"
+        Command="{Binding CalculateCommand}"
+        VerticalOptions="Start" 
+        HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
