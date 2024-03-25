@@ -6,46 +6,170 @@
              x:Class="Mobile_Application.Views.YearsCalculatorPage"
              x:DataType="viewModels:YearsCalculatorViewModel"
              xaml:MauiMicro.Autowire="True"
-            Shell.FlyoutBehavior="Disabled"
-            Title="Dog to Human Age Calculator"
-            BackgroundColor="FloralWhite"
-            Shell.BackgroundColor="RoyalBlue">
-    <VerticalStackLayout>
+             Title="Years Calculator"
+             BackgroundColor="FloralWhite"
+             Shell.BackgroundColor="RoyalBlue">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </ContentPage.Resources>
+    <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" Padding="10">
         <Label 
-        Text="Welcome to Dog to Human Age Calculator!"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+            Text="🐕📅"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="40"
+            Padding="10"
+            FontAttributes="Bold"/>
         <Label 
-        Text="Enter your dog's age:"
-        VerticalOptions="Start" 
-        HorizontalOptions="Start" />
-        <Entry 
-        x:Name="DogAgeEntry"
-        Placeholder="Dog's age"
-        Keyboard="Numeric"
-        VerticalOptions="Start" 
-        HorizontalOptions="FillAndExpand" />
-        <Label 
-        Text="Select your dog's size:"
-        VerticalOptions="Start" 
-        HorizontalOptions="Start" />
-        <Picker 
-        x:Name="DogSizePicker"
-        Title="Select Dog Size"
-        VerticalOptions="Start" 
-        HorizontalOptions="FillAndExpand">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Small</x:String>
-                    <x:String>Medium</x:String>
-                    <x:String>Large</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+            Text="Calculate your dog's age in human years."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20"
+            Padding="5"
+            FontAttributes="Bold"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout Padding="10" Margin="5">
+                <Label 
+                    Text="Enter your dog's age:"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                    Margin="0,10,0,0"
+                    Padding="10"
+                    FontSize="15"
+                    FontAttributes="Bold"/>
+                <Frame 
+                    Padding="5"
+                    CornerRadius="5"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="FillAndExpand">
+                    <Entry 
+                        x:Name="DogAgeEntry"
+                        Placeholder="Dog's Age"
+                        Keyboard="Numeric" 
+                        />
+                </Frame>
+            </VerticalStackLayout>
+            <VerticalStackLayout Padding="10" Margin="5">
+                <Label 
+                    Text="Select your dog's size:"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                    Margin="0,10,0,0"
+                    Padding="10"
+                    FontSize="15"
+                    FontAttributes="Bold"/>
+                <Frame 
+                    Padding="5"
+                    CornerRadius="5"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="FillAndExpand">
+                    <Picker 
+                        x:Name="DogSizePicker"
+                        Title="Select Dog Size"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="FillAndExpand"
+                        >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Small</x:String>
+                                <x:String>Medium</x:String>
+                                <x:String>Large</x:String>
+                                <x:String>Giant</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
         <Button 
-        Text="Calculate"
-        Command="{Binding CalculateCommand}"
-        VerticalOptions="Start" 
-        HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            Text="Calculate"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            Margin="0,10,0,0"
+            FontSize="18"/>
+        <HorizontalStackLayout Margin="0,5,0,0">
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Padding="15">
+                <Label 
+                    Text="Dog Age entered: "
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    FontSize="18"/>
+                <Label 
+                    Text="Binding here"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="18"
+                    FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Padding="15">
+                <Label 
+                    Text="Dog Size entered: "
+                    HorizontalOptions="Center"
+                    FontSize="18"
+                    VerticalOptions="Center" />
+                <Label 
+                    Text="Binding here"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    FontSize="18"
+                    FontAttributes="Bold"/>
+            </StackLayout>
+        </HorizontalStackLayout>
+        
+        <VerticalStackLayout Margin="0,5,0,0">
+            <StackLayout
+        Orientation="Vertical"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Padding="10">
+                <Label 
+            Text="Human Age: "
+            HorizontalOptions="Center"
+            VerticalOptions="Center" 
+            FontSize="25"
+                    FontAttributes="Bold"/>
+                <Label 
+            Text="Binding here"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="25"
+                    FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout
+        Orientation="Horizontal"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Padding="10">
+                <Label 
+            Text="Age Category: "
+            HorizontalOptions="Center"
+            FontSize="20"
+            VerticalOptions="Center" />
+                <Label 
+            Text="Binding here"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" 
+            FontSize="20"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </FlexLayout>
 </ContentPage>

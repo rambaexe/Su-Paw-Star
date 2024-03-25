@@ -58,7 +58,7 @@
 
     <Tab Title="Age">
         <ShellContent
-        ContentTemplate="{DataTemplate views:YearsCalculator}"
+        ContentTemplate="{DataTemplate views:YearsCalculatorPage}"
         Route="YearsCalculatorPage" />
     </Tab>
 

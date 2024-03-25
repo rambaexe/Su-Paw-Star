@@ -73,7 +73,6 @@
                     Orientation="Horizontal">
                     <Entry
                         WidthRequest="100"
-
                         TextChanged="EntryWeight_TextChanged"
                         Placeholder="Weight" />
                     <Label
