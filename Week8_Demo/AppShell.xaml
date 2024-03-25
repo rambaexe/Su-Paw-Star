@@ -32,7 +32,7 @@
     </Shell.Resources>
 
     <Shell.FlyoutHeader>
-        <Label Text="Su-PAW-Star&#x0a;Human's 'fur'ever friends 🐶" 
+        <Label Text="Su-PAW-Star 🐶" 
                Margin="10,10,10,10"  
                Padding =" 10 " 
                FontSize="20"  
@@ -55,6 +55,13 @@
             ContentTemplate="{DataTemplate views:BmiPage}"
             Route="BmiPage" />
     </Tab>
+
+    <Tab Title="Age">
+        <ShellContent
+        ContentTemplate="{DataTemplate views:YearsCalculatorPage}"
+        Route="YearsCalculatorPage" />
+    </Tab>
+
     <Tab Title="Quote Generator">
         <ShellContent
             ContentTemplate="{DataTemplate views:QuoteGeneratorPage}"

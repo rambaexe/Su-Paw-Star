@@ -14,6 +14,7 @@ namespace Mobile_Application.Models
         {
         }
 
+        // Singleton pattern
         public static User Instance
         {
             get

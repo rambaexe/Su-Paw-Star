@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:Mobile_Application.ViewModels"
+             xmlns:converters="clr-namespace:Mobile_Application.Converters"
+             x:Class="Mobile_Application.Views.YearsCalculatorPage"
+             x:DataType="viewModels:YearsCalculatorViewModel"
+             xaml:MauiMicro.Autowire="True"
+             Title="Years Calculator"
+             BackgroundColor="FloralWhite"
+             Shell.BackgroundColor="RoyalBlue">
+    <ContentPage.Resources>
+        <converters:FloatToColourConverter x:Key="FloatToColourConverter" />
+    <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </ContentPage.Resources>
+    <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" Padding="10">
+        <Label Text="🐕📅"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="40"
+               Padding="10"
+               FontAttributes="Bold"/>
+        <Label Text="Calculate your dog's age in human years."
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout Padding=" 5" Margin="0,10,0,0">
+                <Label Text="Dog's age (years):"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Start"
+                       Padding="10"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+                <Frame Padding="5"
+                       CornerRadius="5"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="FillAndExpand">
+                    <Entry x:Name="DogAgeEntry"
+                           Placeholder="Enter Dog's Age"
+                           Keyboard="Numeric"
+                           FontAttributes="Bold"
+                           Text="{Binding DogAge}"
+                           FontSize="17"
+                           TextChanged="EntryAge_TextChanged"/>
+                </Frame>
+            </VerticalStackLayout>
+            <VerticalStackLayout Padding ="5" Margin="0,10,0,0">
+                <Label Text="Dog's breed size:"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Start"
+                       Padding="10"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+                <Frame Padding="5"
+                       CornerRadius="5"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="FillAndExpand">
+                    <Entry x:Name="DogSizeEntry"
+                           FontAttributes="Bold"
+                           Placeholder="Enter Dog's Size"
+                           Text="{Binding DogSize}"
+                           FontSize="17"
+                           TextChanged="EntrySize_TextChanged"/>
+                </Frame>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <Label Text="Possible breeds sizes are: Small (up to 20 lbs), Medium (21-50 lbs), Large (51-90 lbs), Giant (over 90 lbs). Age must be maximum 16 years."
+               VerticalOptions="Start" 
+               HorizontalOptions="Start"
+               Margin="8,5,8,0"
+               Padding="5"
+               FontSize="15"/>
+        <Button Text="Calculate"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,10,0,0"
+                FontSize="18"
+                Command="{Binding CalculateDogYearsCommand}"/>
+        <HorizontalStackLayout Margin="0,5,0,0" HorizontalOptions="Center">
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Padding="15">
+                <Label Text="Dog Age entered: "
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       FontSize="18"/>
+                <Label Text="{Binding DogAge}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Padding="15">
+                <Label Text="Dog Size entered: "
+                       HorizontalOptions="Center"
+                       FontSize="18"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding DogSize}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Margin="0,0,0,0">
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Padding="5">
+                <Label Text="Human Age: "
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       FontSize="25"
+                       FontAttributes="Bold"/>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="{Binding HumanAge, Mode=TwoWay}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           TextColor = "{Binding HumanAge, Converter={StaticResource FloatToColourConverter}}"/>
+                    <Label Text=" years"
+                           TextColor = "{Binding HumanAge, Converter={StaticResource FloatToColourConverter}}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           FontSize="25"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Padding="10">
+                <Label Text="Age Category: "
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"/>
+                <Label Text="{Binding AgeCategory, Mode=TwoWay}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       FontSize="25"                   
+                       FontAttributes="Bold"
+                       TextColor = "{Binding HumanAge, Converter={StaticResource FloatToColourConverter}}"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </FlexLayout>
+</ContentPage>
