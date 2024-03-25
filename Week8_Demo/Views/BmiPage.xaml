@@ -10,9 +10,6 @@
              x:DataType="viewModels:BmiPageViewModel"
              Title="BmiPage">
     
-    <ContentPage.Resources>
-        <converters:DoubleToColourConverter x:Key="DoubleToColourConverter" />
-    </ContentPage.Resources>
 
     <Grid BackgroundColor="White"
           VerticalOptions="FillAndExpand"
