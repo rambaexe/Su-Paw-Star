@@ -57,6 +57,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="Interfaces\Class1.cs" />
       <Compile Remove="Views\NewPage1.xaml.cs" />
     </ItemGroup>
 

@@ -4,6 +4,7 @@ using MauiMicroMvvm;
 using Mobile_Application.Interfaces;
 using Mobile_Application.Models;
 using Supabase;
+using Mobile_Application.Services;
 
 namespace Mobile_Application.ViewModels
 {
@@ -91,6 +92,9 @@ namespace Mobile_Application.ViewModels
 
                 try
                 {
+                    // use UserSuperbaseService to save user
+                    // Services.UserSuperbaseService userSuperbaseService = new Services.UserSuperbaseService();
+                    // userSuperbaseService.SaveUser(model);
                     var response2 = await _supabaseClient.From<UserSuperbase>().Insert(model);
                     if(response2 == null)
                     {

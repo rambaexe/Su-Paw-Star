@@ -39,6 +39,7 @@ namespace Mobile_Application.ViewModels
         public LoginPageViewModel(ViewModelContext context, IAppState appState): base(context)
         {
             _supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
+            Models.SupabaseClient.Instance.CurrentSupabaseClient = _supabaseClient;
 
             NavigateToMainUiCommand = new Command(execute: async () => await NavigateToMainUI(),
                 () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password));
@@ -67,7 +68,6 @@ namespace Mobile_Application.ViewModels
                 {
                     Email = Email,
                     Password = Password
-
                 };
 
                 var response = await _supabaseClient.Auth.SignIn(Email, Password);
@@ -98,8 +98,6 @@ namespace Mobile_Application.ViewModels
                 }
 
                 Console.WriteLine("User name: " + Models.User.Instance.FirstandLastName);
-
-
                 await Shell.Current.GoToAsync("//BmiPage");
             }
             catch (Exception ex)
