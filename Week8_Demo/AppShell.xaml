@@ -40,10 +40,15 @@
                HorizontalOptions="CenterAndExpand" 
                VerticalOptions="CenterAndExpand"/>
     </Shell.FlyoutHeader>
+    
+    
 
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
+    
+    
+    
     <ShellContent
         Title="Login"
         FlyoutItemIsVisible="False"
@@ -54,6 +59,12 @@
         <ShellContent
             ContentTemplate="{DataTemplate views:BmiPage}"
             Route="BmiPage" />
+    </Tab>
+
+    <Tab Title="Dog">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:AddDogPage}"
+            Route="AddDogPage" />
     </Tab>
 
     <Tab Title="Age">

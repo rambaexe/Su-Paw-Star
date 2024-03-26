@@ -32,7 +32,8 @@ public static class MauiProgram
             .MapView<AppShell, AppShellViewModel>()
             .MapView<LoginPage, LoginPageViewModel>()
             .MapView<RegisterPage, RegisterPageViewModel>()
-            .MapView<YearsCalculatorPage, YearsCalculatorViewModel>();
+            .MapView<YearsCalculatorPage, YearsCalculatorViewModel>()
+            .MapView<AddDogPage,AddDogPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<BaseViewModelMoreSimple>();

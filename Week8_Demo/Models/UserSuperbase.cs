@@ -24,8 +24,5 @@ namespace Mobile_Application.Models
         [Column("name")]
         public string FirstandLastName { get; set; }
     }
-
-    // create CRUD operations for UserSuperbase
-
-    
+       
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RQYXBubD7so5XiSeweuifY42VBFaBMs8alQhHGteO+BbNjuR7auM3tb3zcOAV1RAPGUi9sFX5bsodOOVKR3ndw==",
+  "dgSpecHash": "kN5H+TwYX+1vqQrgjsj0gTMAD+EEzTBBfvwi8x+OCxhuD58ulhUjRn3WwNyNlbKynR72vchTk6xxc8wGJYXhrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ramba\\iCloudDrive\\Mobile_Application\\6002CEM_TeodorAndreiRamba\\Week8_Demo\\Week8_Demo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ramba\\.nuget\\packages\\avantipoint.mauimicromvvm\\0.2.7\\avantipoint.mauimicromvvm.0.2.7.nupkg.sha512",
+    "C:\\Users\\Ramba\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\Ramba\\.nuget\\packages\\functions-csharp\\1.3.2\\functions-csharp.1.3.2.nupkg.sha512",
     "C:\\Users\\Ramba\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\Ramba\\.nuget\\packages\\gotrue-csharp\\4.2.6\\gotrue-csharp.4.2.6.nupkg.sha512",

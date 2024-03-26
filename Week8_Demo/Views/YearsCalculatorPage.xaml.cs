@@ -27,7 +27,6 @@ public partial class YearsCalculatorPage : ContentPage
             {
                 viewModel.DogAge = 0;
             }
-
         }
     }
 

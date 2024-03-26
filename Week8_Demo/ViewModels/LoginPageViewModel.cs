@@ -94,6 +94,7 @@ namespace Mobile_Application.ViewModels
                     if (records[i].Email == Email)
                     {
                         Models.User.Instance.FirstandLastName = records[i].FirstandLastName;
+                        Models.User.Instance.ID = records[i].Id;
                     }
                 }
 

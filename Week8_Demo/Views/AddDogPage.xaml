@@ -1,0 +1,129 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:Mobile_Application.ViewModels"
+             x:Class="Mobile_Application.Views.AddDogPage"
+             x:DataType="viewModels:AddDogPageViewModel"
+             xaml:MauiMicro.Autowire="True"
+             Title="Add Dog"
+             BackgroundColor="FloralWhite"
+             Shell.BackgroundColor="RoyalBlue">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="{Binding UserName, StringFormat='Hey, {0}!'}"
+               Grid.Row="0"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="19"
+               Padding="5"
+               FontAttributes="Bold"/>
+
+        <Label Text="🐕 Add a Dog 🐕"
+               Grid.Row="1"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="30"
+               Padding="10"
+               FontAttributes="Bold"/>
+        <Label Text="Enter dog details to add a dog to your list."
+               Grid.Row="2"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="19"
+               Padding="5"/>
+
+        <StackLayout Grid.Row="3" Orientation="Vertical" Margin="5">
+            <Label Text="Dog's Name" FontSize="18" FontAttributes="Bold"/>
+            <Frame Padding="5" CornerRadius="5">
+                <Entry x:Name="DogNameEntry"
+                       Placeholder="Enter Dog's Name"
+                       FontAttributes="Bold"
+                       TextChanged="EntryName_TextChanged"
+                       Text="{Binding DogName}"
+                       FontSize="17"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="4" Orientation="Vertical" Margin="5">
+            <Label Text="Dog's Colour" FontSize="18" FontAttributes="Bold" />
+            <Frame Padding="5" CornerRadius="5">
+                <Entry x:Name="DogColourEntry"
+                       Placeholder="Enter Dog's Colour"
+                       FontAttributes="Bold"
+                       Text="{Binding DogColour}"
+                       TextChanged="EntryColour_TextChanged"
+                       FontSize="17"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="5" Orientation="Vertical" Margin="5">
+            <Label Text="Dog's Age" FontSize="18" FontAttributes="Bold" />
+            <Frame Padding="5" CornerRadius="5">
+                <Entry x:Name="DogAgeEntry"
+                       Placeholder="Enter Dog's Age"
+                       FontAttributes="Bold"
+                       Text="{Binding DogAge}"
+                       TextChanged="EntryAge_TextChanged"
+                       FontSize="17"
+                       Keyboard="Numeric"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="6" Orientation="Vertical" Margin="5">
+            <Label Text="Dog's Breed" FontSize="18" FontAttributes="Bold"/>
+            <Frame Padding="5" CornerRadius="5">
+                <Entry x:Name="DogBreedEntry"
+                       Placeholder="Enter Dog's Breed"
+                       FontAttributes="Bold"
+                       Text="{Binding DogBreed}"
+                       TextChanged="EntryBreed_TextChanged"
+                       FontSize="17"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="7" Orientation="Vertical" Margin="5">
+            <Label Text="Dog's Size" FontSize="18" FontAttributes="Bold" />
+            <Frame Padding="5" CornerRadius="5">
+                <Entry x:Name="DogSizeEntry"
+                       Placeholder="Enter Dog's Size"
+                       FontAttributes="Bold"
+                       Text="{Binding DogSize}"
+                       TextChanged="EntrySize_TextChanged"
+                       FontSize="17"/>
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Add Dog"
+                Grid.Row="8"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,10,0,0"
+                FontSize="18"
+                Command="{Binding AddDogCommand}"/>
+    </Grid>
+</ContentPage>

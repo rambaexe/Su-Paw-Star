@@ -7,6 +7,7 @@ namespace Mobile_Application.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string FirstandLastName { get; set; }
+        public int ID { get; set; }
 
         private static User _instance;
 

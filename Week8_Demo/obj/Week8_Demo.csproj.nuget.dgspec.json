@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -123,6 +127,10 @@
             "AvantiPoint.MauiMicroMvvm": {
               "target": "Package",
               "version": "[0.2.7, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -183,6 +191,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -242,6 +254,10 @@
             "AvantiPoint.MauiMicroMvvm": {
               "target": "Package",
               "version": "[0.2.7, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
