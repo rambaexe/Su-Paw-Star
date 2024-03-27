@@ -86,6 +86,9 @@
       <MauiXaml Update="Views\AddDogPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
+      <MauiXaml Update="Views\ListDogsPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
       <MauiXaml Update="Views\RegisterPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>

@@ -115,14 +115,16 @@ namespace Mobile_Application.ViewModels
 
             // create model to insert to supabase
             // create dog model
+            // make strings lowercase
+
             UsersDogsSuperbase dogsupabase = new UsersDogsSuperbase()
             {
                 User_Id = Models.User.Instance.ID,
                 Dog_Name = currentdog.DogName,
-                Dog_Colour = currentdog.DogColour,
-                Dog_Breed = currentdog.DogBreed,
+                Dog_Colour = currentdog.DogColour.ToLower(),
+                Dog_Breed = currentdog.DogBreed.ToLower(),
                 Dog_Age = currentdog.DogAge,
-                Dog_Size = currentdog.DogSize
+                Dog_Size = currentdog.DogSize.ToLower()
             };
 
             // create supabase client
@@ -131,8 +133,9 @@ namespace Mobile_Application.ViewModels
             // create service
             try
             {
-                var service = new UsersDogsSupabaseService(supabaseClient);
+                var service = new SupabaseFacadeService(supabaseClient);
                 var response = service.CreateDog(dogsupabase);
+
                 if (response == null)
                 {
                     // show alert message window with error

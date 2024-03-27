@@ -291,7 +291,6 @@ C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_De
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Numerics.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Numerics.Vectors.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.ObjectModel.dll
-C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Private.DataContractSerialization.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Private.Uri.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Private.Xml.dll
@@ -1060,3 +1059,4 @@ C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_De
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.dll
 C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\CommunityToolkit.Mvvm.pdb
+C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
