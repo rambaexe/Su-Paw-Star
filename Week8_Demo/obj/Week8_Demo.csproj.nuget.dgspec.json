@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -90,6 +94,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -120,6 +128,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -145,6 +157,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -175,6 +191,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -200,6 +220,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [
@@ -231,6 +255,10 @@
               "target": "Package",
               "version": "[0.2.7, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -250,6 +278,10 @@
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
+            },
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.16.1, )"
             }
           },
           "imports": [

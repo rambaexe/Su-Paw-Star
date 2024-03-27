@@ -1,0 +1,105 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 88dbff1..a4d6d9c 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1 +1 @@[m
+[31m-.vs/[m
+[32m+[m[32m.vs/[m
+\ No newline at end of file[m
+[1mdiff --git a/.vs/Week8_Demo/FileContentIndex/ec5c1178-c424-4e21-99e8-b54320a586e7.vsidx b/.vs/Week8_Demo/FileContentIndex/ec5c1178-c424-4e21-99e8-b54320a586e7.vsidx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..24fd7d1[m
+Binary files /dev/null and b/.vs/Week8_Demo/FileContentIndex/ec5c1178-c424-4e21-99e8-b54320a586e7.vsidx differ
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfo.cs b/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfo.cs[m
+[1mindex 871f6aa..9a497ef 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfo.cs[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfo.cs[m
+[36m@@ -14,7 +14,7 @@[m [musing System.Reflection;[m
+ [assembly: System.Reflection.AssemblyCompanyAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")][m
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[31m-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fac599bdb40822eb92cff17ac7accda9e5204ab8")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6646a8df14584a78b1318e6733b0fb3746ba8466")][m
+ [assembly: System.Reflection.AssemblyProductAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyTitleAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfoInputs.cache b/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfoInputs.cache[m
+[1mindex 55e411c..5326a59 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfoInputs.cache[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-android/Week8_Demo.AssemblyInfoInputs.cache[m
+[36m@@ -1 +1 @@[m
+[31m-967d3a384ab325a09beeed3f48b3634dccee5d134bb1fb81616997ff3abd3288[m
+[32m+[m[32mc50bc7f05fdcc9927442a2b8449ca805354eb62ae5c6764a30c6990f285f4171[m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-android/designtime/build.props b/Week8_Demo/obj/Debug/net8.0-android/designtime/build.props[m
+[1mindex e8382ea..d1ec43f 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-android/designtime/build.props[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-android/designtime/build.props[m
+[36m@@ -24,7 +24,7 @@[m [mandroidgeneratejnimarshalmethods=false[m
+ os=windows_nt[m
+ androidincludedebugsymbols=true[m
+ androidpackagenamingpolicy=lowercasecrc64[m
+[31m-_nugetassetstimestamp=638466133493700432[m
+[32m+[m[32m_nugetassetstimestamp=638466139932390029[m
+ typemapkind=strings-asm[m
+ androidsupportedabis=armeabi-v7a;arm64-v8a;x86;x86_64[m
+ androidmanifestplaceholders=[m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfo.cs b/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfo.cs[m
+[1mindex 55aa8f0..b53cba6 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfo.cs[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfo.cs[m
+[36m@@ -14,7 +14,7 @@[m [musing System.Reflection;[m
+ [assembly: System.Reflection.AssemblyCompanyAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")][m
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[31m-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fac599bdb40822eb92cff17ac7accda9e5204ab8")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6646a8df14584a78b1318e6733b0fb3746ba8466")][m
+ [assembly: System.Reflection.AssemblyProductAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyTitleAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfoInputs.cache b/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1mindex b9d4dd9..2329ec0 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-ios/iossimulator-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[36m@@ -1 +1 @@[m
+[31m-6ac51ce427faa382db136c5ddcc398a8bc214d9cec4274bace56be236c5746f5[m
+[32m+[m[32mdf8dec9118d8d3ea8a3862273df01d56490af71e780bce00b7da6c1198237078[m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfo.cs b/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfo.cs[m
+[1mindex 6a42727..ae462fe 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfo.cs[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfo.cs[m
+[36m@@ -14,7 +14,7 @@[m [musing System.Reflection;[m
+ [assembly: System.Reflection.AssemblyCompanyAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")][m
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[31m-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fac599bdb40822eb92cff17ac7accda9e5204ab8")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6646a8df14584a78b1318e6733b0fb3746ba8466")][m
+ [assembly: System.Reflection.AssemblyProductAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyTitleAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfoInputs.cache b/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1mindex 69f02af..5df8292 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[36m@@ -1 +1 @@[m
+[31m-cad3c5c9a4f6902590ae87d21fade43a68e084695ce426e4daae12f07370d79d[m
+[32m+[m[32m27041098678d03dfdb607da0abeed3a3468a35bfd54c21449a821f99e19d7383[m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfo.cs b/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfo.cs[m
+[1mindex cef1e50..400035f 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfo.cs[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfo.cs[m
+[36m@@ -18,7 +18,7 @@[m [musing System.Reflection;[m
+ [assembly: System.Reflection.AssemblyCompanyAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")][m
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[31m-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fac599bdb40822eb92cff17ac7accda9e5204ab8")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6646a8df14584a78b1318e6733b0fb3746ba8466")][m
+ [assembly: System.Reflection.AssemblyProductAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyTitleAttribute("Week8_Demo")][m
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[1mdiff --git a/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfoInputs.cache b/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1mindex 6c8846d..6c0f98b 100644[m
+[1m--- a/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[1m+++ b/Week8_Demo/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Week8_Demo.AssemblyInfoInputs.cache[m
+[36m@@ -1 +1 @@[m
+[31m-558391f07fced5310d2ad31fa8e6eabd77cc6402847d37d7ee37fc99696e5e79[m
+[32m+[m[32m

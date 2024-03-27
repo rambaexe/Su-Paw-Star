@@ -15,21 +15,65 @@
     Shell.TabBarUnselectedColor="Azure"
     xaml:MauiMicro.Autowire="True"
     x:DataType="viewModels:AppShellViewModel"
-    Title="Week7_Demo">
-    <Shell.FlyoutFooter>
-        <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
-    </Shell.FlyoutFooter>
-    <ShellContent
-        Title="Login"
-        FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="login" />
+    Title="Mobile_Application">
+    <Shell.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </Shell.Resources>
 
+    <Shell.FlyoutHeader>
+        <Label Text="Su-PAW-Star 🐶" 
+               Margin="10,10,10,10"  
+               Padding =" 10 " 
+               FontSize="20"  
+               FontAttributes="Bold" 
+               HorizontalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"/>
+    </Shell.FlyoutHeader>
+    
+    <Shell.FlyoutFooter>
+        <Button Margin="5" Text="Logout"  Command="{Binding LogOutCommand}" />
+    </Shell.FlyoutFooter>
+    
+    <ShellContent
+    Title="Login"
+    FlyoutItemIsVisible="False"
+    ContentTemplate="{DataTemplate views:LoginPage}"
+    Route="login" />
+
+    <FlyoutItem Title="View Dogs">
+        <ShellContent ContentTemplate="{DataTemplate views:ListDogsPage}" />
+    </FlyoutItem>
+    
+    
     <Tab Title="BmiPage">
         <ShellContent
             ContentTemplate="{DataTemplate views:BmiPage}"
             Route="BmiPage" />
     </Tab>
+
+    <Tab Title="Dog">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:AddDogPage}"
+            Route="AddDogPage" />
+    </Tab>
+
+    <Tab Title="Age">
+        <ShellContent
+        ContentTemplate="{DataTemplate views:YearsCalculatorPage}"
+        Route="YearsCalculatorPage" />
+    </Tab>
+
     <Tab Title="Quote Generator">
         <ShellContent
             ContentTemplate="{DataTemplate views:QuoteGeneratorPage}"

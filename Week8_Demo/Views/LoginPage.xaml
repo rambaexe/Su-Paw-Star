@@ -8,60 +8,73 @@
              xaml:MauiMicro.Autowire="True"
              Shell.FlyoutBehavior="Disabled"
              Title="Login"
-             BackgroundColor="White"
-             Shell.BackgroundColor="DarkGreen">
+             BackgroundColor="FloralWhite"
+             Shell.BackgroundColor="RoyalBlue">
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Consolas" />
-            <Setter Property="TextColor" Value="DarkGreen" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
         </Style>
         <Style TargetType="Entry">
             <Setter Property="FontFamily" Value="Consolas" />
-            <Setter Property="TextColor" Value="DarkGreen" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
         </Style>
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Consolas" />
-            <Setter Property="TextColor" Value="White" />
+            <Setter Property="TextColor" Value="FloralWhite" />
         </Style>
     </ContentPage.Resources>
 
-    <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="Welcome!"
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="20">
+        <Label Text="🐾 🐕 🐾"
                HorizontalOptions="Center"
-               FontSize="40"
-               Padding="5"
+               FontSize="45"
+               Padding="20"
+               FontAttributes="Bold" />
+        
+        <Label Text="Welcome to"
+               HorizontalOptions="Center"
+               FontSize="20"
+               Padding="0"
+               FontAttributes="Bold" />
+
+        <Label Text="SU-PAW-STAR" 
+               HorizontalOptions="Center" 
+               FontSize="35" 
+               Padding="0" 
                FontAttributes="Bold" />
 
         <Label Text="Login to access your account."
-               FontSize="23"
-               FontAttributes="Bold"
-               Padding="5" />
+               HorizontalOptions="Center"
+               FontSize="18"
+               Padding="10" />
 
         <Frame CornerRadius="10" Padding="15" Margin="0,10,0,0" BackgroundColor="LightGray">
             <StackLayout>
-                <Label Text="Username" FontSize="15" />
+                <Label Text="Email" FontSize="15" FontAttributes="Bold" />
                 <Frame CornerRadius="10" Padding="5" Margin="0,10,0,0" BackgroundColor="White">
                     <Entry TextChanged="Email_TextChanged"
                            Text="{Binding Email}"
                            Margin="5,0,0,0"
-                           Placeholder="Email"
-                           FontSize="18" />     
+                           Placeholder="Enter your email."
+                           FontSize="15" />     
                 </Frame>
 
-                <Label Text="Password" FontSize="15" Margin="0,15,0,0" />
+                <Label Text="Password" FontSize="15" Margin="0,15,0,0"  FontAttributes="Bold"/>
                 <Frame CornerRadius="10" Padding="5" Margin="0,10,0,0" BackgroundColor="White">
                     <Entry TextChanged="Password_TextChanged"
                            Text="{Binding Password}"
                            Margin="5,0,0,0"
-                           Placeholder="Password"
+                           Placeholder="Enter your password."
                            IsPassword="True"
-                           FontSize="18" />
+                           FontSize="15" />
                 </Frame>
 
                 <Button Margin="0,20,0,0"
                         x:Name="LoginButton"
                         Command="{Binding NavigateToMainUiCommand}"
                         Text="Login"
+                        FontSize="16"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="FillAndExpand" />
 
@@ -80,7 +93,7 @@
                             Text="Register" 
                             HorizontalOptions="End" 
                             VerticalOptions="Center"
-                            Command="{Binding ValidateCommand}" />
+                            Command="{Binding NavigateToRegisterPageCommand}" />
                 </Grid>
             </StackLayout>
         </Frame>

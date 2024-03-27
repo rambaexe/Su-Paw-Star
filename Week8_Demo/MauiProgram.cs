@@ -30,14 +30,17 @@ public static class MauiProgram
             .MapView<QuoteGeneratorPage, QuoteGeneratorPageViewModel>()
             .MapView<SavedQuotes, SavedQuotesViewModel>()
             .MapView<AppShell, AppShellViewModel>()
-            .MapView<LoginPage, LoginPageViewModel>();
+            .MapView<LoginPage, LoginPageViewModel>()
+            .MapView<RegisterPage, RegisterPageViewModel>()
+            .MapView<YearsCalculatorPage, YearsCalculatorViewModel>()
+            .MapView<AddDogPage,AddDogPageViewModel>()
+            .MapView<ListDogsPage, ListDogsPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<BaseViewModelMoreSimple>();
         builder.Services.AddSingleton<IAppState, AppState>();
         builder.Services.AddSingleton<IQuoteService, QuoteRealService>();
         builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
-
 
         return builder.Build();
     }
