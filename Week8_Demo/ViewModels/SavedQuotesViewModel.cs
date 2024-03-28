@@ -31,7 +31,6 @@ public class SavedQuotesViewModel : BaseViewModel
             ShouldShowDefaultText = true;
             ShouldShowPopulatedLayout = false;
             DeleteCommand = new Command<QuoteModel>(async (quote) => await DeleteQuote(quote));
-         
         }
 
         public override async void OnAppearing()

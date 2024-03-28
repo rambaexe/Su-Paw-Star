@@ -116,13 +116,19 @@ namespace Mobile_Application.ViewModels
             // create model to insert to supabase
             // create dog model
             // make strings lowercase
+            // first letter of each word in name is uppercase
+            // first letter of each word in breed is uppercase 
+            currentdog.DogName = currentdog.DogName.ToLower();
+            currentdog.DogName = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(currentdog.DogName);
+            currentdog.DogBreed = currentdog.DogBreed.ToLower();
+            currentdog.DogBreed = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(currentdog.DogBreed);
 
             UsersDogsSuperbase dogsupabase = new UsersDogsSuperbase()
             {
                 User_Id = Models.User.Instance.ID,
                 Dog_Name = currentdog.DogName,
                 Dog_Colour = currentdog.DogColour.ToLower(),
-                Dog_Breed = currentdog.DogBreed.ToLower(),
+                Dog_Breed = currentdog.DogBreed,
                 Dog_Age = currentdog.DogAge,
                 Dog_Size = currentdog.DogSize.ToLower()
             };

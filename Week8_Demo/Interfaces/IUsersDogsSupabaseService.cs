@@ -13,5 +13,7 @@ namespace Mobile_Application.Interfaces
         Task<IEnumerable<UsersDogsSuperbase>> ReadDogs();          // R - Read
         Task UpdateDog(UsersDogsSuperbase usersdogssuperbase);     // U - Update
         Task DeleteDog(int id);                                    // D - Delete
+
+        Task<IEnumerable<UsersDogsSuperbase>> ReadDogsByUserId(int userId);  // Read by User ID
     }
 }

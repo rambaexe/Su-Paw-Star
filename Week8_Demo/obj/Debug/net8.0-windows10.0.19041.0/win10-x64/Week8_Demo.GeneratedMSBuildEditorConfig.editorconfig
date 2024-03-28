@@ -48,6 +48,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.A
 build_metadata.AdditionalFiles.TargetPath = Views\AddDogPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddDogPage.xaml
 
+[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/AddWalkPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.AddWalkPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddWalkPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddWalkPage.xaml
+
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/BmiPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.BmiPage.xaml

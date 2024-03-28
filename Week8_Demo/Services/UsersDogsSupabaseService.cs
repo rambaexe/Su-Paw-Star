@@ -41,7 +41,14 @@ namespace Mobile_Application.Services
 
         public async Task DeleteDog(int id)
         {
+            // delete dog by id and user id
             await _supabaseClient.From<UsersDogsSuperbase>().Where(b => b.Id == id).Delete();
+        }
+
+        public async Task<IEnumerable<UsersDogsSuperbase>> ReadDogsByUserId(int userId)
+        {
+            var response = await _supabaseClient.From<UsersDogsSuperbase>().Get();
+            return response.Models.Where(b => b.User_Id == userId);
         }
     }
 }

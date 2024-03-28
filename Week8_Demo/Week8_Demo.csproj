@@ -58,10 +58,13 @@
 
     <ItemGroup>
       <Compile Remove="Interfaces\Class1.cs" />
+      <Compile Remove="Models\Class1.cs" />
+      <Compile Remove="Views\AddWalk.xaml.cs" />
       <Compile Remove="Views\NewPage1.xaml.cs" />
     </ItemGroup>
 
     <ItemGroup>
+      <MauiXaml Remove="Views\AddWalk.xaml" />
       <MauiXaml Remove="Views\NewPage1.xaml" />
     </ItemGroup>
 
@@ -84,6 +87,9 @@
 
     <ItemGroup>
       <MauiXaml Update="Views\AddDogPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\AddWalkPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\ListDogsPage.xaml">
