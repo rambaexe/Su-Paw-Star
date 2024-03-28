@@ -60,5 +60,9 @@ namespace Mobile_Application.Services
             await _usersDogsSupabaseService.DeleteDog(id);
         }
 
+        public async Task<IEnumerable<UsersDogsSuperbase>> ReadDogsByUserId(int userId)
+        {
+            return await _usersDogsSupabaseService.ReadDogsByUserId(userId);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Mobile_Application.Models
     [Table("user_dogs")]
     public class UsersDogsSuperbase : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("dog_id", false)]
         public int Id { get; set; }
 
         [Column("user_id")]
