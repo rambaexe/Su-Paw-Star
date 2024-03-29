@@ -3,7 +3,7 @@ using Mobile_Application.Models;
 
 namespace Mobile_Application
 {
-    public class AppState : IAppState
+    public class AppState 
     {
         public User CurrentUser { get; set; }
 

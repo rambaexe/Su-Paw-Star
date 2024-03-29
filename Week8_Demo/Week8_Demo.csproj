@@ -57,19 +57,39 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="AppState.cs" />
       <Compile Remove="Interfaces\Class1.cs" />
+      <Compile Remove="Interfaces\IAppState.cs" />
+      <Compile Remove="Interfaces\IDatabaseService.cs" />
+      <Compile Remove="Interfaces\IQuoteService.cs" />
       <Compile Remove="Models\Class1.cs" />
+      <Compile Remove="Models\QuoteModel.cs" />
+      <Compile Remove="Services\DatabaseService.cs" />
+      <Compile Remove="Services\FakeQuoteService.cs" />
+      <Compile Remove="Services\QuoteRealService.cs" />
+      <Compile Remove="ViewModels\BmiPageViewModel.cs" />
+      <Compile Remove="ViewModels\ClassicMauiPageViewModel.cs" />
+      <Compile Remove="ViewModels\QuoteGeneratorPageViewModel.cs" />
+      <Compile Remove="ViewModels\SavedQuotesViewModel.cs" />
       <Compile Remove="ViewModels\UpdateDogPageViewModel.xaml.cs" />
       <Compile Remove="Views\AddWalk.xaml.cs" />
+      <Compile Remove="Views\BmiPage.xaml.cs" />
+      <Compile Remove="Views\ClassicMauiPage.xaml.cs" />
       <Compile Remove="Views\ListWalks.xaml.cs" />
       <Compile Remove="Views\NewPage1.xaml.cs" />
+      <Compile Remove="Views\QuoteGeneratorPage.xaml.cs" />
+      <Compile Remove="Views\SavedQuotes.xaml.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <MauiXaml Remove="ViewModels\UpdateDogPageViewModel.xaml" />
       <MauiXaml Remove="Views\AddWalk.xaml" />
+      <MauiXaml Remove="Views\BmiPage.xaml" />
+      <MauiXaml Remove="Views\ClassicMauiPage.xaml" />
       <MauiXaml Remove="Views\ListWalks.xaml" />
       <MauiXaml Remove="Views\NewPage1.xaml" />
+      <MauiXaml Remove="Views\QuoteGeneratorPage.xaml" />
+      <MauiXaml Remove="Views\SavedQuotes.xaml" />
     </ItemGroup>
 
     <ItemGroup>
@@ -114,6 +134,10 @@
       <MauiXaml Update="Views\YearsCalculatorPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Dtos\" />
     </ItemGroup>
 
 </Project>

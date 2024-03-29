@@ -11,7 +11,6 @@ namespace Mobile_Application.ViewModels
     public class RegisterPageViewModel : BaseViewModel
     {
         private readonly Supabase.Client _supabaseClient;
-        private readonly IAppState _appState;
 
         public ICommand RegisterCommand { get; set; }
 
@@ -55,10 +54,9 @@ namespace Mobile_Application.ViewModels
             }
         }
 
-        public RegisterPageViewModel(ViewModelContext context, IAppState appState) : base(context)
+        public RegisterPageViewModel(ViewModelContext context) : base(context)
         {
             _supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
-            _appState = appState;
 
             RegisterCommand = new Command(execute: async () => await Register(),
                                           canExecute: () => !string.IsNullOrEmpty(FirstandLastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(ConfirmPassword));

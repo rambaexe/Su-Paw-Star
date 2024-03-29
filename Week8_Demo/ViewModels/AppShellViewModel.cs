@@ -16,7 +16,7 @@ public class AppShellViewModel : BaseViewModel
         set => Set(value);
     }
 
-    public AppShellViewModel(ViewModelContext context, IAppState state) : base(context)
+    public AppShellViewModel(ViewModelContext context) : base(context)
     {
         LogOutCommand = new Command(ExecuteLogout);
     }

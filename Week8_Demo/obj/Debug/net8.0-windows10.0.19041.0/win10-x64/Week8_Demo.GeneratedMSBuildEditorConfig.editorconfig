@@ -54,18 +54,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.A
 build_metadata.AdditionalFiles.TargetPath = Views\AddWalkPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddWalkPage.xaml
 
-[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/BmiPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.BmiPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\BmiPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\BmiPage.xaml
-
-[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/ClassicMauiPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.ClassicMauiPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\ClassicMauiPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\ClassicMauiPage.xaml
-
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/ListDogsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.ListDogsPage.xaml
@@ -84,23 +72,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.L
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
-[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/QuoteGeneratorPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.QuoteGeneratorPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\QuoteGeneratorPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\QuoteGeneratorPage.xaml
-
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/RegisterPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.RegisterPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\RegisterPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\RegisterPage.xaml
-
-[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/SavedQuotes.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.SavedQuotes.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\SavedQuotes.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\SavedQuotes.xaml
 
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/UpdateDogPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

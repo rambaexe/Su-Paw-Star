@@ -38,9 +38,6 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<BaseViewModelMoreSimple>();
-        builder.Services.AddSingleton<IAppState, AppState>();
-        builder.Services.AddSingleton<IQuoteService, QuoteRealService>();
-        builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 
         return builder.Build();
     }

@@ -10,7 +10,6 @@ namespace Mobile_Application.ViewModels
     public class LoginPageViewModel : BaseViewModel
     {
         private readonly Supabase.Client _supabaseClient;
-        private readonly IAppState _appState;
 
         public ICommand NavigateToMainUiCommand { get; set; }
         public ICommand NavigateToRegisterPageCommand { get; set; }
@@ -36,7 +35,7 @@ namespace Mobile_Application.ViewModels
             }
         }
 
-        public LoginPageViewModel(ViewModelContext context, IAppState appState): base(context)
+        public LoginPageViewModel(ViewModelContext context): base(context)
         {
             _supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
             Models.SupabaseClient.Instance.CurrentSupabaseClient = _supabaseClient;
@@ -44,7 +43,6 @@ namespace Mobile_Application.ViewModels
             NavigateToMainUiCommand = new Command(execute: async () => await NavigateToMainUI(),
                 () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password));
             NavigateToRegisterPageCommand = new Command(execute: async () => await NavigateToRegisterPage());
-            _appState = appState;
 
         }
 
@@ -64,12 +62,6 @@ namespace Mobile_Application.ViewModels
         {
             try
             {
-                _appState.CurrentUser = new Models.User()
-                {
-                    Email = Email,
-                    Password = Password
-                };
-
                 var response = await _supabaseClient.Auth.SignIn(Email, Password);
 
                 // check if the user is authenticated
