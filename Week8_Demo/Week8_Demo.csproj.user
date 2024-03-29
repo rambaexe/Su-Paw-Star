@@ -20,6 +20,9 @@
     <MauiXaml Update="Views\ListDogsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\ListWalksPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\RegisterPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

@@ -32,62 +32,52 @@
     </Shell.Resources>
 
     <Shell.FlyoutHeader>
-        <Label Text="Su-PAW-Star 🐶" 
-               Margin="10,10,10,10"  
-               Padding =" 10 " 
-               FontSize="20"  
-               FontAttributes="Bold" 
-               HorizontalOptions="CenterAndExpand" 
-               VerticalOptions="CenterAndExpand"/>
+        <StackLayout>
+            <Label 
+                Text="Su-PAW-Star 🐶" 
+                Margin="10,10,10,10"  
+                Padding="10" 
+                FontSize="30"  
+                FontAttributes="Bold" 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand"/>
+            
+        </StackLayout>
     </Shell.FlyoutHeader>
-    
+
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout"  Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
-    
+
     <ShellContent
-    Title="Login"
-    FlyoutItemIsVisible="False"
-    ContentTemplate="{DataTemplate views:LoginPage}"
-    Route="login" />
+        Title="Login"
+        FlyoutItemIsVisible="False"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="login" />
 
-    <FlyoutItem Title="View Dogs">
-        <ShellContent ContentTemplate="{DataTemplate views:ListDogsPage}" />
-    </FlyoutItem>
+    <Tab Title="Calculator">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:YearsCalculatorPage}"
+            Route="YearsCalculatorPage" />
+    </Tab>
 
+    <Tab Title="Add Dog">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:AddDogPage}"
+            Route="AddDogPage" />
+    </Tab>
+    
     <Tab Title="View Dogs">
         <ShellContent
             ContentTemplate="{DataTemplate views:ListDogsPage}"
             Route="ListDogsPage" />
     </Tab>
 
-    <Tab Title="BmiPage">
+    <Tab Title="View Walks"
+         >
         <ShellContent
-            ContentTemplate="{DataTemplate views:BmiPage}"
-            Route="BmiPage" />
+            ContentTemplate="{DataTemplate views:ListWalksPage}"
+            Route="ListWalksPage" />
     </Tab>
 
-    <Tab Title="Dog">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:AddDogPage}"
-            Route="AddDogPage" />
-    </Tab>
-
-    <Tab Title="Age">
-        <ShellContent
-        ContentTemplate="{DataTemplate views:YearsCalculatorPage}"
-        Route="YearsCalculatorPage" />
-    </Tab>
-
-    <Tab Title="Quote Generator">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:QuoteGeneratorPage}"
-            Route="QuoteGeneratorPage" />
-    </Tab>
-
-    <Tab Title="SavedQuotesPage">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:SavedQuotes}"
-            Route="SavedQuotesPage" />
-    </Tab>
 </Shell>

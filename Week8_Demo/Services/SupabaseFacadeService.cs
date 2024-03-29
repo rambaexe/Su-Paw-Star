@@ -13,11 +13,13 @@ namespace Mobile_Application.Services
     {
         public UsersDogsSupabaseService _usersDogsSupabaseService;
         public UserSupabaseService _usersSupabaseService;
+        public WalksSupabaseService _walksSupabaseService;
 
         public SupabaseFacadeService(Supabase.Client supabaseClient)
         {
             _usersDogsSupabaseService = new UsersDogsSupabaseService(supabaseClient);
             _usersSupabaseService = new UserSupabaseService(supabaseClient);
+            _walksSupabaseService = new WalksSupabaseService(supabaseClient);
         }
 
         public async Task CreateUser(UserSuperbase usersupabase)
@@ -63,6 +65,26 @@ namespace Mobile_Application.Services
         public async Task<IEnumerable<UsersDogsSuperbase>> ReadDogsByUserId(int userId)
         {
             return await _usersDogsSupabaseService.ReadDogsByUserId(userId);
+        }
+
+        public async Task CreateWalk(WalksSupabase walksSupabase)
+        {
+            await _walksSupabaseService.CreateWalk(walksSupabase);
+        }
+
+        public async Task<IEnumerable<WalksSupabase>> ReadWalks()
+        {
+            return await _walksSupabaseService.ReadWalks();
+        }
+
+        public async Task UpdateWalk(WalksSupabase walksSupabase)
+        {
+            await _walksSupabaseService.UpdateWalk(walksSupabase);
+        }
+
+        public async Task DeleteWalk(int id)
+        {
+            await _walksSupabaseService.DeleteWalk(id);
         }
     }
 }

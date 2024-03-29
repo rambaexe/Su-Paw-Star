@@ -7,21 +7,21 @@ namespace Mobile_Application.ViewModels;
 
 public class AppShellViewModel : BaseViewModel
 {
-    private readonly IAppState _state;
     public ICommand LogOutCommand { get; set; }
-    
-    
+
+    public string UserName
+    {
+        get => Models.User.Instance.FirstandLastName;
+        set => Set(value);
+    }
 
     public AppShellViewModel(ViewModelContext context, IAppState state) : base(context)
     {
-        _state = state;
         LogOutCommand = new Command(ExecuteLogout);
-        
     }
 
     private void ExecuteLogout()
     {
-        _state.CurrentUser = null;
         // delete user from local storage
         Models.User.Instance.Clear();
         Shell.Current.GoToAsync("//login");

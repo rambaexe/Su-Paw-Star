@@ -95,11 +95,13 @@ namespace Mobile_Application.ViewModels
                     {
                         Models.User.Instance.FirstandLastName = records[i].FirstandLastName;
                         Models.User.Instance.ID = records[i].Id;
+                        Models.User.Instance.Email = records[i].Email;
+
                     }
                 }
 
                 Console.WriteLine("User name: " + Models.User.Instance.FirstandLastName);
-                await Shell.Current.GoToAsync("//BmiPage");
+                await Shell.Current.GoToAsync("//YearsCalculatorPage");
             }
             catch (Exception ex)
             {

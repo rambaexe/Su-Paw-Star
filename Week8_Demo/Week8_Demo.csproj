@@ -60,11 +60,13 @@
       <Compile Remove="Interfaces\Class1.cs" />
       <Compile Remove="Models\Class1.cs" />
       <Compile Remove="Views\AddWalk.xaml.cs" />
+      <Compile Remove="Views\ListWalks.xaml.cs" />
       <Compile Remove="Views\NewPage1.xaml.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <MauiXaml Remove="Views\AddWalk.xaml" />
+      <MauiXaml Remove="Views\ListWalks.xaml" />
       <MauiXaml Remove="Views\NewPage1.xaml" />
     </ItemGroup>
 
@@ -93,6 +95,9 @@
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\ListDogsPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\ListWalksPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\RegisterPage.xaml">

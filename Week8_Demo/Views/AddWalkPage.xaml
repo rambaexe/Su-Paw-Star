@@ -17,7 +17,6 @@
         <Style TargetType="Entry">
             <Setter Property="FontFamily" Value="Consolas" />
             <Setter Property="TextColor" Value="RoyalBlue" />
-            <Setter Property="HeightRequest" Value="40" />
         </Style>
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Consolas" />
@@ -26,13 +25,11 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <Label  
-           Grid.Row="0"
-           VerticalOptions="Start" 
-           HorizontalOptions="Start"
-           FontSize="20"
-           Margin="5,10,5,0"
-           FontAttributes="Bold">
+        <Label VerticalOptions="Start" 
+               HorizontalOptions="Start"
+               FontSize="20"
+               Margin="5,10,5,0"
+               FontAttributes="Bold">
             <Label.Text>
                 <MultiBinding StringFormat="{}{0}'s Walk with {1} 🐕">
                     <Binding Path="UserName" />
@@ -41,39 +38,59 @@
             </Label.Text>
         </Label>
 
-        <ScrollView>
-            <StackLayout Padding="10">
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="10" >
+                <Label Text="Walk Date" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="5" 
+                       FontAttributes="Bold" 
+                       FontSize="15"/>
+                <DatePicker x:Name="WalkDateEntry" Date="{Binding WalkDate}" Margin="0,0,20,0" />
 
-                <StackLayout Orientation="Horizontal" Margin="10" >
-                    <Label Text="Walk Date" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" FontAttributes="Bold" FontSize="15"/>
-                    <DatePicker x:Name="WalkDateEntry" Margin="0,0,20,0" />
-
-                    <Label Text="Walk Time" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" FontAttributes="Bold" FontSize="15"/>
-                    <TimePicker x:Name="WalkTimeEntry" />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical" Margin="10" >
-                    <Label Text="Walk Description" FontAttributes="Bold" Margin="5" FontSize="15"/>
-                    <Frame>
-                        <Entry x:Name="WalkDescriptionEntry" HeightRequest="70" Placeholder="Enter walk description." />
-                    </Frame>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical"  Margin="10"  >
-                    <Label Text="Dog Rating (out of 5)" FontAttributes="Bold" Margin="5" FontSize="15" />
-                    <Slider x:Name="DogRatingSlider" 
-                Minimum="0" 
-                Maximum="5" 
-                ValueChanged="OnSliderValueChanged" />
-                    <Label Text="{Binding Source={x:Reference DogRatingSlider}, Path=Value, StringFormat='Rating: {0:F0}'}" FontAttributes="Bold" Margin="5" FontSize="15"/>
-                </StackLayout>
-
-                <Button Text="Add Walk" 
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"  FontSize="18"/>
-
+                <Label Text="Walk Time" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="5" 
+                       FontAttributes="Bold" 
+                       FontSize="15"/>
+                <TimePicker x:Name="WalkTimeEntry" Time="{Binding WalkTime}" />
             </StackLayout>
-        </ScrollView>
+
+            <StackLayout Orientation="Vertical" Margin="10" >
+                <Label Text="Walk Description" 
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15"/>
+                <Frame>
+                    <Entry x:Name="WalkDescriptionEntry" 
+                            HeightRequest="70" 
+                            Text="{Binding WalkDescription}"
+                            Placeholder="Enter walk description." />
+                    
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="10" >
+                <Label Text="Dog Rating (out of 5)" 
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15" />
+                <Slider x:Name="DogRatingSlider" 
+                        Minimum="0" 
+                        Maximum="5" 
+                        ValueChanged="OnSliderValueChanged" />
+                <Label Text="{Binding Source={x:Reference DogRatingSlider}, Path=Value, StringFormat='Rating: {0:F0}'}"
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15"/>
+            </StackLayout>
+
+            <Button Text="Add Walk" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"  
+                    Command="{Binding AddWalkCommand}"
+                    FontSize="18"/>
+        </StackLayout>
     </StackLayout>
-        
 </ContentPage>

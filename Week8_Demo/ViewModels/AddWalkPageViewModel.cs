@@ -16,7 +16,7 @@ namespace Mobile_Application.ViewModels
 {
     public class AddWalkPageViewModel : BaseViewModel
     {
-        public ICommand AddDogCommand { get; set; }
+        public ICommand AddWalkCommand { get; set; }
 
         // UserName is Model.User.Instance.FirstandLastName
         public string UserName
@@ -31,150 +31,108 @@ namespace Mobile_Application.ViewModels
             set => Set(value);
         }
 
-        public string DogName
+        public string WalkDate
         {
             get => Get<string>();
-            set
-            {
-                Set(value);
-                (AddDogCommand as Command).ChangeCanExecute();
-            }
+            set => Set(value);
         }
 
-        public string DogColour
+        public TimeSpan WalkTime
+        {
+            get => Get<TimeSpan>();
+            set => Set(value);
+        }
+
+        public string WalkDescription
         {
             get => Get<string>();
-            set
-            {
-                Set(value);
-                (AddDogCommand as Command).ChangeCanExecute();
-            }
+            set => Set(value);
         }
 
-        public string DogBreed
+        public int DogRating
         {
-            get => Get<string>();
-            set
-            {
-                Set(value);
-                (AddDogCommand as Command).ChangeCanExecute();
-            }
-        }
-
-        public float DogAge
-        {
-            get => Get<float>();
-            set
-            {
-                Set(value);
-                (AddDogCommand as Command).ChangeCanExecute();
-            }
-        }
-
-        public string DogSize
-        {
-            get => Get<string>();
-            set
-            {
-                Set(value);
-                (AddDogCommand as Command).ChangeCanExecute();
-            }
+            get => Get<int>();
+            set => Set(value);
         }
 
         public AddWalkPageViewModel(ViewModelContext context) : base(context)
         {
-            AddDogCommand = new Command(execute: AddDog, canExecute: AddDogShouldBeEnabled);
+            AddWalkCommand = new Command(execute: AddWalk);
         }
 
-        private void AddDog()
+        private void AddWalk()
         {
-            // create dog using DogBuilder and DogFactory
-            Dog currentdog;
-            if (String.IsNullOrEmpty(DogSize)) DogSize = "";
-            if (String.IsNullOrEmpty(DogColour)) DogColour = "";
-            if (String.IsNullOrEmpty(DogBreed)) DogBreed = "";
-            if (String.IsNullOrEmpty(DogName)) DogName = "";
-
-            switch (DogSize.ToLower())
-            {
-                case "small":
-                    currentdog = DogFactory.CreateSmallDog(DogName, DogBreed, DogAge, DogColour);
-                    break;
-                case "medium":
-                    currentdog = DogFactory.CreateMediumDog(DogName, DogBreed, DogAge, DogColour);
-                    break;
-                case "large":
-                    currentdog = DogFactory.CreateLargeDog(DogName, DogBreed, DogAge, DogColour);
-                    break;
-                case "giant":
-                    currentdog = DogFactory.CreateGiantDog(DogName, DogBreed, DogAge, DogColour);
-                    break;
-                case "":
-                    // display error message
-                    App.Current.MainPage.DisplayAlert("Error", "Invalid dog size", "OK");
-                    return;
-                default:
-                    // display error message
-                    App.Current.MainPage.DisplayAlert("Error", "Invalid dog size", "OK");
-                    return;
-            }
-
-            // create model to insert to supabase
-            // create dog model
-            // make strings lowercase
-            // first letter of each word in name is uppercase
-            // first letter of each word in breed is uppercase 
-            currentdog.DogName = currentdog.DogName.ToLower();
-            currentdog.DogName = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(currentdog.DogName);
-            currentdog.DogBreed = currentdog.DogBreed.ToLower();
-            currentdog.DogBreed = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(currentdog.DogBreed);
-
-            UsersDogsSuperbase dogsupabase = new UsersDogsSuperbase()
-            {
-                User_Id = Models.User.Instance.ID,
-                Dog_Name = currentdog.DogName,
-                Dog_Colour = currentdog.DogColour.ToLower(),
-                Dog_Breed = currentdog.DogBreed,
-                Dog_Age = currentdog.DogAge,
-                Dog_Size = currentdog.DogSize.ToLower()
-            };
-
-            // create supabase client
-            var supabaseClient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
-
-            // create service
             try
             {
-                var service = new SupabaseFacadeService(supabaseClient);
-                var response = service.CreateDog(dogsupabase);
-
-                if (response == null)
+                if(WalkDate == null)
                 {
-                    // show alert message window with error
-                    AppShell.Current.DisplayAlert("Error", "Failed to add dog", "OK");
+                    //set to today
+                    WalkDate = DateTime.Now.ToString();
                 }
-                else
+                // delete last 3 characters of WalkDate
+                var time = WalkTime.ToString();
+                if(time.Length > 3)
                 {
-                    // show successfull message
-                    AppShell.Current.DisplayAlert("Success", "Dog added successfully", "OK");
+                    time = time.Substring(0, time.Length - 3);
                 }
+                var date = WalkDate.Split(' ')[0];
+                
+                // write data to console
+                Console.WriteLine($"Dog Name: {DogNameVM}");
+                Console.WriteLine($"Walk Date: {date}");
+                Console.WriteLine($"Walk Time: {time}");
+                Console.WriteLine($"Walk Description: {WalkDescription}");
+                Console.WriteLine($"Dog Rating: {DogRating}");
 
+                var title = $"{UserName}'s Walk with {DogNameVM} 🐕";
+
+                // create walk object
+                var walk = new WalksSupabase()
+                {
+                    User_Id = Models.User.Instance.ID,
+                    Dog_Id = Models.CurrentDog.Instance.Id,
+                    Walk_Date = date,
+                    Walk_Time = time,
+                    Walk_Description = WalkDescription,
+                    Dog_Rating = DogRating,
+                    Walk_Title = title
+                };
+
+                try
+                {
+                    var _supabaseclient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
+                    var service = new SupabaseFacadeService(_supabaseclient);
+                    var response = service.CreateWalk(walk);
+
+                    if (response != null)
+                    {
+                        Shell.Current.DisplayAlert("Success", "Walk added", "OK");
+                    }
+                    else
+                    {
+                        Shell.Current.DisplayAlert("Error", "Failed to add walk", "OK");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Shell.Current.DisplayAlert("Error", e.Message, "OK");
+                    return;
+                }
+                
             }
             catch (Exception e)
             {
-                // show alert message window with error
-                AppShell.Current.DisplayAlert("Error", e.Message, "OK");
+                Shell.Current.DisplayAlert("Error", e.Message, "OK");
+                return;
             }
         }
 
-        private bool AddDogShouldBeEnabled()
-        {
-            var dogagerequirements = DogAge >= 0 && DogAge <= 16;
-            // size is small, medium, large or giant
-            var sizerequirements = !String.IsNullOrEmpty(DogSize) && (DogSize == "small" || DogSize == "medium" || DogSize == "large" || DogSize == "giant");
-            var namerequirements = !String.IsNullOrEmpty(DogName);
-            return namerequirements && namerequirements;
-        }
 
+        public void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var newStep = Math.Round(e.NewValue);
+
+            ((Slider)sender).Value = newStep;
+        }
     }
 }

@@ -70,12 +70,6 @@
 
                                     <SwipeView.RightItems>
                                         <SwipeItems>
-                                            <!--
-                                            <SwipeItem Text="Edit"
-                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
-                                                       CommandParameter="{Binding .}"
-                                                       BackgroundColor="LightGreen" />
-                                            -->
                                             <SwipeItem Text="Add walk"
                                                        Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddWalkCommand}"
                                                        CommandParameter="{Binding .}"

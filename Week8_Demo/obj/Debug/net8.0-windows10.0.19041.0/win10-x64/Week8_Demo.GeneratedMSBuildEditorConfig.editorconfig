@@ -72,6 +72,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.L
 build_metadata.AdditionalFiles.TargetPath = Views\ListDogsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ListDogsPage.xaml
 
+[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/ListWalksPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.ListWalksPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ListWalksPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ListWalksPage.xaml
+
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.LoginPage.xaml
