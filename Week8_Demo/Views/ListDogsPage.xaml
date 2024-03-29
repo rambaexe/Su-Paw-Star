@@ -39,10 +39,11 @@
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <StackLayout IsVisible="{Binding ShouldShowDefaultText, Mode=TwoWay}" VerticalOptions="CenterAndExpand">
-                    <Label Text="No saved Dogs. Please adopt or add dogs to your list!"
+                    <Label Text="No saved Dogs. Please add dogs to your list to view them!"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
-                           FontSize="18"/>
+                           FontSize="16"
+                           Margin=" 10 "/>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding ShouldShowPopulatedLayout, Mode=TwoWay}" VerticalOptions="FillAndExpand"
                              HorizontalOptions="FillAndExpand">
