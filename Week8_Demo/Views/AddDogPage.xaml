@@ -35,13 +35,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Text="{Binding UserName, StringFormat='Hey, {0}!'}"
-               Grid.Row="0"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center"
-               FontSize="19"
-               Padding="5"
-               FontAttributes="Bold"/>
+        
 
         <Label Text="🐕 Add a Dog 🐕"
                Grid.Row="1"

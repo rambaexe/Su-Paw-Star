@@ -96,7 +96,6 @@ namespace Mobile_Application.ViewModels
                         Models.User.Instance.FirstandLastName = records[i].FirstandLastName;
                         Models.User.Instance.ID = records[i].Id;
                         Models.User.Instance.Email = records[i].Email;
-
                     }
                 }
 

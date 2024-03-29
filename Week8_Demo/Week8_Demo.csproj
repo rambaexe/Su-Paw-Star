@@ -59,12 +59,14 @@
     <ItemGroup>
       <Compile Remove="Interfaces\Class1.cs" />
       <Compile Remove="Models\Class1.cs" />
+      <Compile Remove="ViewModels\UpdateDogPageViewModel.xaml.cs" />
       <Compile Remove="Views\AddWalk.xaml.cs" />
       <Compile Remove="Views\ListWalks.xaml.cs" />
       <Compile Remove="Views\NewPage1.xaml.cs" />
     </ItemGroup>
 
     <ItemGroup>
+      <MauiXaml Remove="ViewModels\UpdateDogPageViewModel.xaml" />
       <MauiXaml Remove="Views\AddWalk.xaml" />
       <MauiXaml Remove="Views\ListWalks.xaml" />
       <MauiXaml Remove="Views\NewPage1.xaml" />
@@ -101,6 +103,12 @@
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\RegisterPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\UpdateDogPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\UpdateWalkPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\YearsCalculatorPage.xaml">

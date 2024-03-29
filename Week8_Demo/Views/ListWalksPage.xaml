@@ -29,50 +29,56 @@
     </ContentPage.Resources>
 
     <VerticalStackLayout>
-        <Label Text="{Binding UserName, StringFormat='Walks of {0} 🐕🚶🏻🏞️'}"
+        <Label Text="{Binding UserName, StringFormat='{0}`s Walks🚶🏻🏞️'}" 
                VerticalOptions="Center" 
                HorizontalOptions="Center"
                FontSize="20"
                Padding="5"
                FontAttributes="Bold"/>
-
+        
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <StackLayout IsVisible="{Binding ShouldShowDefaultText, Mode=TwoWay}" VerticalOptions="CenterAndExpand">
-                    <Label Text="No saved Walks."
+                    <Label Text="No saved Walks. "
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
-                           FontSize="18"
-                           Margin=" 10 "/>
+                           FontSize="18" 
+                           Margin=" 5 "/>
+                    <Label Text=" Add walks from the Dogs Page. "
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            FontSize="18" 
+                            Margin=" 0 "/>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding ShouldShowPopulatedLayout, Mode=TwoWay}" VerticalOptions="FillAndExpand"
                              HorizontalOptions="FillAndExpand">
                     <CollectionView x:Name="collectionView"
                                     VerticalOptions="FillAndExpand"
-                                    ItemsSource="{Binding CurrentDogs, Mode=TwoWay}">
+                                    ItemsSource="{Binding CurrentWalks, Mode=TwoWay}">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="models:UsersDogsSuperbase">
+                            <DataTemplate x:DataType="models:WalksSupabase">
                                 <SwipeView>
-                                    <!-- Dog Info -->
-                                    <Grid RowSpacing="5" Padding="10" RowDefinitions="Auto,Auto,Auto">
-                                        <Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="{Binding Dog_Name}" />
+                                    <Grid RowSpacing="5" Padding="10" RowDefinitions="Auto,Auto,Auto, Auto">
+                                        <Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="{Binding Walk_Title}" />
                                         <StackLayout Grid.Row="1" Orientation="Horizontal">
-                                            <Label FontSize="Small" Text="{Binding Dog_Size}" />
+                                            <Label FontSize="Small" Text="{Binding Walk_Date}" />
                                             <Label FontSize="Small" Text=", " />
-                                            <Label FontSize="Small"  Text="{Binding Dog_Colour}" />
-                                            <Label FontSize="Small" Text=" " />
-                                            <Label FontSize="Small" Text="{Binding Dog_Breed}" />
+                                            <Label FontSize="Small"  Text="{Binding Walk_Time}" />
+                                            
                                         </StackLayout>
                                         <StackLayout Grid.Row="2" Orientation="Horizontal">
-                                            <Label FontSize="Small"  Text="{Binding Dog_Age}" />
-                                            <Label FontSize="Small"  Text=" year(s) old" />
+                                            <Label FontSize="Small"  Text="{Binding Walk_Description}" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="3" Orientation="Horizontal">
+                                            <Label FontSize="Small"  Text="Dog Rating: " />
+                                            <Label FontSize="Small"  Text="{Binding Dog_Rating}" />
                                         </StackLayout>
                                     </Grid>
 
                                     <SwipeView.RightItems>
                                         <SwipeItems>
-                                            <SwipeItem Text="Add walk"
-                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddWalkCommand}"
+                                            <SwipeItem Text="Edit"
+                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.UpdateWalkCommand}"
                                                        CommandParameter="{Binding .}"
                                                        BackgroundColor="LightGreen" />
                                             <SwipeItem Text="Delete"
@@ -82,12 +88,14 @@
 
                                         </SwipeItems>
                                     </SwipeView.RightItems>
+                                    
+                                    
                                 </SwipeView>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
+        </ScrollView> 
     </VerticalStackLayout>
 </ContentPage>

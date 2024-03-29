@@ -79,7 +79,8 @@
                 <Slider x:Name="DogRatingSlider" 
                         Minimum="0" 
                         Maximum="5" 
-                        ValueChanged="OnSliderValueChanged" />
+                        ValueChanged="OnSliderValueChanged"
+                        Value="{Binding DogRating}"/>
                 <Label Text="{Binding Source={x:Reference DogRatingSlider}, Path=Value, StringFormat='Rating: {0:F0}'}"
                        FontAttributes="Bold" 
                        Margin="5" 

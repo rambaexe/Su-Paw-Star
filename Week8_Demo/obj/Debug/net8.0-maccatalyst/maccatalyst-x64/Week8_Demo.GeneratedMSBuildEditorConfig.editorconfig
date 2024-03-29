@@ -106,6 +106,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.S
 build_metadata.AdditionalFiles.TargetPath = Views\SavedQuotes.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SavedQuotes.xaml
 
+[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/UpdateDogPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.UpdateDogPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UpdateDogPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UpdateDogPage.xaml
+
+[C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/UpdateWalkPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.UpdateWalkPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UpdateWalkPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UpdateWalkPage.xaml
+
 [C:/Users/Ramba/iCloudDrive/Mobile_Application/6002CEM_TeodorAndreiRamba/Week8_Demo/Views/YearsCalculatorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mobile_Application.Views.YearsCalculatorPage.xaml

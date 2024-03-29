@@ -2,6 +2,7 @@ using System.Windows.Input;
 using MauiMicroMvvm;
 using Mobile_Application.Interfaces;
 using Mobile_Application.Models;
+using Mobile_Application.ViewModels;
 
 namespace Mobile_Application.ViewModels;
 

@@ -28,7 +28,6 @@ com.google.android.material.appbar.AppBarLayout;C:\Users\Ramba\iCloudDrive\Mobil
 com.google.android.material.appbar.AppBarLayout;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\158\jl\res\layout\navigationlayout.xml
 com.google.android.material.appbar.MaterialToolbar;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\155\jl\res\layout\toolbar.xml
 com.google.android.material.tabs.TabLayout;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\155\jl\res\layout\tabbar.xml
-crc640ec207abc449b2ca.ShellFlyoutLayout;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\156\jl\res\layout\flyoutcontent.xml
 declare-styleable;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\155\jl\res\values\attrs.xml
 declare-styleable;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\158\jl\res\values\attr.xml
 external-cache-path;C:\Users\Ramba\iCloudDrive\Mobile_Application\6002CEM_TeodorAndreiRamba\Week8_Demo\obj\Debug\net8.0-android\lp\159\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml

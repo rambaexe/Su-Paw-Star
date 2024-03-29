@@ -25,10 +25,6 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
         builder.Services
-            .MapView<BmiPage, BmiPageViewModel>()
-            .MapView<ClassicMauiPage, ClassicMauiPageViewModel>()
-            .MapView<QuoteGeneratorPage, QuoteGeneratorPageViewModel>()
-            .MapView<SavedQuotes, SavedQuotesViewModel>()
             .MapView<AppShell, AppShellViewModel>()
             .MapView<LoginPage, LoginPageViewModel>()
             .MapView<RegisterPage, RegisterPageViewModel>()
@@ -36,7 +32,9 @@ public static class MauiProgram
             .MapView<AddDogPage,AddDogPageViewModel>()
             .MapView<ListDogsPage, ListDogsPageViewModel>()
             .MapView<AddWalkPage, AddWalkPageViewModel>()
-            .MapView<ListWalksPage, ListWalksPageViewModel>();
+            .MapView<ListWalksPage, ListWalksPageViewModel>()
+            .MapView<UpdateWalkPage, UpdateWalkPageViewModel>()
+            .MapView<UpdateDogPage, UpdateDogPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<BaseViewModelMoreSimple>();

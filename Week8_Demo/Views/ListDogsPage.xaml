@@ -39,11 +39,15 @@
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <StackLayout IsVisible="{Binding ShouldShowDefaultText, Mode=TwoWay}" VerticalOptions="CenterAndExpand">
-                    <Label Text="No saved Dogs. Please add dogs to your list to view them!"
+                    <Label Text="No saved Dogs. "
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            FontSize="16"
                            Margin=" 10 "/>
+                    <Label Text="Please add dogs to your list to view them!"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="16"/>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding ShouldShowPopulatedLayout, Mode=TwoWay}" VerticalOptions="FillAndExpand"
                              HorizontalOptions="FillAndExpand">
@@ -53,6 +57,7 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:UsersDogsSuperbase">
                                 <SwipeView>
+                                    
                                     <!-- Dog Info -->
                                     <Grid RowSpacing="5" Padding="10" RowDefinitions="Auto,Auto,Auto">
                                         <Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="{Binding Dog_Name}" />
@@ -71,8 +76,8 @@
 
                                     <SwipeView.RightItems>
                                         <SwipeItems>
-                                            <SwipeItem Text="Add walk"
-                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddWalkCommand}"
+                                            <SwipeItem Text="Edit"
+                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.EditCommand}"
                                                        CommandParameter="{Binding .}"
                                                        BackgroundColor="LightGreen" />      
                                             <SwipeItem Text="Delete"
@@ -82,6 +87,15 @@
                                             
                                         </SwipeItems>
                                     </SwipeView.RightItems>
+                                    
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Add walk"
+                                                       Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddWalkCommand}"
+                                                       CommandParameter="{Binding .}"
+                                                       BackgroundColor="LightBlue" />
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
                                 </SwipeView>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>

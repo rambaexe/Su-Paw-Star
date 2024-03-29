@@ -84,7 +84,7 @@ namespace Mobile_Application.ViewModels
                 Console.WriteLine($"Walk Description: {WalkDescription}");
                 Console.WriteLine($"Dog Rating: {DogRating}");
 
-                var title = $"{UserName}'s Walk with {DogNameVM} 🐕";
+                var title = $"Walk with {DogNameVM} 🐕";
 
                 // create walk object
                 var walk = new WalksSupabase()
@@ -107,6 +107,7 @@ namespace Mobile_Application.ViewModels
                     if (response != null)
                     {
                         Shell.Current.DisplayAlert("Success", "Walk added", "OK");
+                        Shell.Current.Navigation.PopAsync();
                     }
                     else
                     {

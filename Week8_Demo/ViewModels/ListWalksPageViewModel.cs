@@ -20,7 +20,7 @@ namespace Mobile_Application.ViewModels
         private readonly SupabaseFacadeService _supabaseFacadeService;
 
         public ICommand DeleteCommand { get; set; }
-        public ICommand AddWalkCommand { get; set; }
+        public ICommand UpdateWalkCommand { get; set; }
 
         public string UserName
         {
@@ -30,6 +30,9 @@ namespace Mobile_Application.ViewModels
 
         public ObservableCollection<UsersDogsSuperbase> Dogs { get; set; } = new();
         public ObservableCollection<UsersDogsSuperbase> CurrentDogs { get; set; } = new();
+
+        public ObservableCollection<WalksSupabase> Walks { get; set; } = new();
+        public ObservableCollection<WalksSupabase> CurrentWalks { get; set; } = new();
 
         public bool ShouldShowDefaultText
         {
@@ -44,29 +47,35 @@ namespace Mobile_Application.ViewModels
 
         public ListWalksPageViewModel(ViewModelContext context) : base(context)
         {
-            DeleteCommand = new Command<UsersDogsSuperbase>(async (dog) => await DeleteDog(dog));
-            AddWalkCommand = new Command<UsersDogsSuperbase>(async (dog) => await AddWalk(dog));
+            DeleteCommand = new Command<WalksSupabase>(async (walk) => await DeleteWalk(walk));
+
+            UpdateWalkCommand = new Command<WalksSupabase>(async (walk) => await UpdateWalk(walk));
         }
 
-        private async Task AddWalk(UsersDogsSuperbase dog)
+        private async Task UpdateWalk(WalksSupabase walk)
         {
-            var result = await Shell.Current.DisplayAlert("Add walk", $"Do you want to add a walk with \"{dog.Dog_Name}\"?", "Yes", "No");
+            var result = await Shell.Current.DisplayAlert("Add walk", $"Do you want to edit \"{walk.Walk_Title}\"?", "Yes", "No");
             if (result is true)
             {
-                // create current dog
-                Models.CurrentDog.Instance.Clear();
-                Models.CurrentDog.Instance.Id = dog.Id;
-                Models.CurrentDog.Instance.Name = dog.Dog_Name;
+                // create current walk
+                Models.CurrentWalk.Instance.Clear();
+                Models.CurrentWalk.Instance.Id = walk.Walk_Id;
+                Models.CurrentWalk.Instance.Title = walk.Walk_Title;
+                Models.CurrentWalk.Instance.Date = walk.Walk_Date;
+                Models.CurrentWalk.Instance.Time = walk.Walk_Time;
+                Models.CurrentWalk.Instance.Description = walk.Walk_Description;
+                Models.CurrentWalk.Instance.Rating = walk.Dog_Rating;
 
-                await Shell.Current.GoToAsync("/AddWalkPage");
+
+                await Shell.Current.GoToAsync("/UpdateWalkPage");
 
             }
 
         }
 
-        private async Task DeleteDog(UsersDogsSuperbase dog)
+        private async Task DeleteWalk(WalksSupabase walk)
         {
-            var result = await Shell.Current.DisplayAlert("Delete", $"Are you sure you want to delete \"{dog.Dog_Name}\"?", "Yes", "No");
+            var result = await Shell.Current.DisplayAlert("Delete", $"Are you sure you want to delete \"{walk.Walk_Title}\"?", "Yes", "No");
 
             if (result is true)
             {
@@ -74,12 +83,12 @@ namespace Mobile_Application.ViewModels
                 var _supabaseFacadeService = new SupabaseFacadeService(_supabaseclient);
                 try
                 {
-                    await _supabaseFacadeService.DeleteDog(dog.Id);
-                    await FetchAllDogs();
+                    await _supabaseFacadeService.DeleteWalk(walk.Walk_Id);
+                    await FetchAllWalks();
                 }
                 catch (Exception e)
                 {
-                    AppShell.Current.DisplayAlert("Error", "Failed to delete dog", "OK");
+                    AppShell.Current.DisplayAlert("Error", "Failed to delete walk", "OK");
                     Console.WriteLine(e.Message);
                 }
             }
@@ -90,7 +99,7 @@ namespace Mobile_Application.ViewModels
             base.OnAppearing();
             try
             {
-                await FetchAllDogs();
+                await FetchAllWalks();
             }
             catch (Exception e)
             {
@@ -98,36 +107,37 @@ namespace Mobile_Application.ViewModels
             }
         }
 
-        private async Task FetchAllDogs()
+        private async Task FetchAllWalks()
         {
-            Dogs.Clear();
-            CurrentDogs.Clear();
+            Walks.Clear();
+            CurrentWalks.Clear();
+
             var _supabaseclient = new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseAnonKey);
             var _supabaseFacadeService = new SupabaseFacadeService(_supabaseclient);
-            var result = await _supabaseFacadeService.ReadDogs();
+            var result = await _supabaseFacadeService.ReadWalks();
             // get results from the database and add them to the Dogs collection
 
 
             if (result.Any())
             {
-                foreach (var dog in result)
+                foreach (var walk in result)
                 {
-                    Dogs.Add(dog);
+                    Walks.Add(walk);
                 }
             }
 
             // filter the dogs collection to only show the dogs that belong to the current user
             Console.WriteLine("User ID: " + Models.User.Instance.ID);
-            foreach (var dog in Dogs)
+            foreach (var walk in Walks)
             {
-                Console.WriteLine("Dog's User ID: " + dog.User_Id);
-                if (dog.User_Id == Models.User.Instance.ID)
+                Console.WriteLine("Walk: " + walk.Walk_Title);
+                if (walk.User_Id == Models.User.Instance.ID)
                 {
-                    CurrentDogs.Add(dog);
+                    CurrentWalks.Add(walk);
                 }
             }
 
-            if (CurrentDogs.Count > 0)
+            if (CurrentWalks.Count > 0)
             {
                 ShouldShowPopulatedLayout = true;
                 ShouldShowDefaultText = false;

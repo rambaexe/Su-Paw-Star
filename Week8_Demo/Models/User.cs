@@ -30,7 +30,10 @@ namespace Mobile_Application.Models
 
         public void Clear()
         {
-            _instance = null;
+            Email = "";
+            Password = "";
+            FirstandLastName = "";
+            ID = 0;
         }
     }
 }

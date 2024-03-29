@@ -29,13 +29,10 @@ namespace Mobile_Application.Services
         public async Task UpdateWalk(WalksSupabase walksSupabase)
         {
             await _supabaseClient.From<WalksSupabase>().Where(b => b.Walk_Id == walksSupabase.Walk_Id)
-                .Set(b => b.User_Id, walksSupabase.User_Id)
-                .Set(b => b.Dog_Id, walksSupabase.Dog_Id)
                 .Set(b => b.Walk_Date, walksSupabase.Walk_Date)
                 .Set(b => b.Walk_Time, walksSupabase.Walk_Time)
                 .Set(b => b.Walk_Description, walksSupabase.Walk_Description)
                 .Set(b => b.Dog_Rating, walksSupabase.Dog_Rating)
-                .Set(b => b.Walk_Title, walksSupabase.Walk_Title)
                 .Update();
         }
 

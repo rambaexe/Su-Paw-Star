@@ -25,7 +25,9 @@ namespace Mobile_Application.ViewModels
 
         public ICommand DeleteCommand { get; set; }
         public ICommand AddWalkCommand { get; set; }
-        
+        public ICommand EditCommand { get; set;}
+
+
         public string UserName
         {
             get => Models.User.Instance.FirstandLastName;
@@ -50,6 +52,25 @@ namespace Mobile_Application.ViewModels
         {
             DeleteCommand = new Command<UsersDogsSuperbase>(async (dog) => await DeleteDog(dog));
             AddWalkCommand = new Command<UsersDogsSuperbase>(async (dog) => await AddWalk(dog));
+            EditCommand = new Command<UsersDogsSuperbase>(async (dog) => await EditDog(dog));
+        }
+
+        private async Task EditDog(UsersDogsSuperbase dog)
+        {
+            var result = await Shell.Current.DisplayAlert("Edit", $"Do you want to edit \"{dog.Dog_Name}\"?", "Yes", "No");
+            if (result is true)
+            {
+                // create current dog
+                Models.CurrentDog.Instance.Clear();
+                Models.CurrentDog.Instance.Id = dog.Id;
+                Models.CurrentDog.Instance.Name = dog.Dog_Name;
+                Models.CurrentDog.Instance.Breed = dog.Dog_Breed;
+                Models.CurrentDog.Instance.Colour = dog.Dog_Colour;
+                Models.CurrentDog.Instance.Age = dog.Dog_Age;
+                Models.CurrentDog.Instance.Size = dog.Dog_Size;
+
+                await Shell.Current.GoToAsync("/UpdateDogPage");
+            }
         }
 
         private async Task AddWalk(UsersDogsSuperbase dog)

@@ -1,0 +1,97 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:Mobile_Application.ViewModels"
+             x:Class="Mobile_Application.Views.UpdateWalkPage"
+             x:DataType="viewModels:UpdateWalkPageViewModel"
+             xaml:MauiMicro.Autowire="True"
+             Shell.FlyoutBehavior="Disabled"
+             Title="Update Walk"
+             BackgroundColor="FloralWhite"
+             Shell.BackgroundColor="RoyalBlue">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label VerticalOptions="Start" 
+               HorizontalOptions="Start"
+               FontSize="20"
+               Margin="5,10,5,0"
+               FontAttributes="Bold">
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0}'s Walk with {1} 🐕">
+                    <Binding Path="UserName" />
+                    <Binding Path="DogNameVM" />
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="10" >
+                <Label Text="Walk Date" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="5" 
+                       FontAttributes="Bold" 
+                       FontSize="15"/>
+                <DatePicker x:Name="WalkDateEntry" Date="{Binding WalkDate}" Margin="0,0,20,0" />
+
+                <Label Text="Walk Time" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="5" 
+                       FontAttributes="Bold" 
+                       FontSize="15"/>
+                <TimePicker x:Name="WalkTimeEntry" Time="{Binding WalkTime}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="10" >
+                <Label Text="Walk Description" 
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15"/>
+                <Frame>
+                    <Entry x:Name="WalkDescriptionEntry" 
+                            HeightRequest="70" 
+                            Text="{Binding WalkDescription}"
+                            Placeholder="Enter walk description." />
+
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="10" >
+                <Label Text="Dog Rating (out of 5)" 
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15" />
+                <Slider x:Name="DogRatingSlider" 
+                        Minimum="0" 
+                        Maximum="5" 
+                        ValueChanged="OnSliderValueChanged" 
+                        Value="{Binding DogRating}"/>
+                <Label Text="{Binding Source={x:Reference DogRatingSlider}, Path=Value, StringFormat='Rating: {0:F0}'}"
+                       FontAttributes="Bold" 
+                       Margin="5" 
+                       FontSize="15"/>
+            </StackLayout>
+
+            <Button Text="Update Walk" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"  
+                    Command="{Binding UpdateWalkCommand}"
+                    FontSize="18"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

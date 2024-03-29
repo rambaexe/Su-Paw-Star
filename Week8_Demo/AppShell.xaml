@@ -73,8 +73,7 @@
             Route="ListDogsPage" />
     </Tab>
 
-    <Tab Title="View Walks"
-         >
+    <Tab Title="View Walks" >
         <ShellContent
             ContentTemplate="{DataTemplate views:ListWalksPage}"
             Route="ListWalksPage" />

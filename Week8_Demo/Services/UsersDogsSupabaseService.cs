@@ -30,7 +30,6 @@ namespace Mobile_Application.Services
         public async Task UpdateDog(UsersDogsSuperbase usersdogssuperbase)
         {
             await _supabaseClient.From<UsersDogsSuperbase>().Where(b => b.Id == usersdogssuperbase.Id)
-                .Set(b => b.User_Id, usersdogssuperbase.User_Id)
                 .Set(b => b.Dog_Name, usersdogssuperbase.Dog_Name)
                 .Set(b => b.Dog_Breed, usersdogssuperbase.Dog_Breed)
                 .Set(b => b.Dog_Age, usersdogssuperbase.Dog_Age)    
