@@ -19,6 +19,14 @@ namespace Mobile_Application.ViewModels
     {
         private readonly SupabaseFacadeService _supabaseFacadeService;
 
+        public struct CurrentWalkswithDateSeparated
+        {
+            public string Year { get; set; }
+            public string Month { get; set; }
+            public string Day { get; set; }
+            public string Time { get; set; }
+        }
+
         public ICommand DeleteCommand { get; set; }
         public ICommand UpdateWalkCommand { get; set; }
 
@@ -133,7 +141,75 @@ namespace Mobile_Application.ViewModels
                 Console.WriteLine("Walk: " + walk.Walk_Title);
                 if (walk.User_Id == Models.User.Instance.ID)
                 {
+                    Console.WriteLine("Date:" + walk.Walk_Date);
+                    Console.WriteLine("Time:" + walk.Walk_Time);
                     CurrentWalks.Add(walk);
+                }
+            }
+
+            // date is in the format mm/dd/yyyy
+            // get year, month, day from time
+            foreach (var walk in CurrentWalks)
+            {
+                var date = walk.Walk_Date.Split('/');
+                var year = date[2];
+                var month = date[0];
+                var day = date[1];
+                Console.WriteLine("Year: " + year);
+                Console.WriteLine("Month: " + month);
+                Console.WriteLine("Day: " + day);
+            }
+
+            // sort the dogs by year, month, day and then time
+            for(int i=0; i<CurrentWalks.Count - 1; i++) 
+            {
+                for(int j=i+1; j<CurrentWalks.Count; j++)
+                {
+                    var date1 = CurrentWalks[i].Walk_Date.Split('/');
+                    var year1 = date1[2];
+                    var month1 = date1[0];
+                    var day1 = date1[1];
+                    var time1 = CurrentWalks[i].Walk_Time;
+
+                    var date2 = CurrentWalks[j].Walk_Date.Split('/');
+                    var year2 = date2[2];
+                    var month2 = date2[0];
+                    var day2 = date2[1];
+                    var time2 = CurrentWalks[j].Walk_Time;
+
+                    if (year1 == year2)
+                    {
+                        if (month1 == month2)
+                        {
+                            if (day1 == day2)
+                            {
+                                if (CurrentWalks[i].Walk_Time.CompareTo(CurrentWalks[j].Walk_Time) > 0)
+                                {
+                                    var temp = CurrentWalks[i];
+                                    CurrentWalks[i] = CurrentWalks[j];
+                                    CurrentWalks[j] = temp;
+                                }
+                            }
+                            else if (day1.CompareTo(day2) > 0)
+                            {
+                                var temp = CurrentWalks[i];
+                                CurrentWalks[i] = CurrentWalks[j];
+                                CurrentWalks[j] = temp;
+                            }
+                        }
+                        else if (month1.CompareTo(month2) > 0)
+                        {
+                            var temp = CurrentWalks[i];
+                            CurrentWalks[i] = CurrentWalks[j];
+                            CurrentWalks[j] = temp;
+                        }
+                    }
+                    else if (year1.CompareTo(year2) > 0)
+                    {
+                        var temp = CurrentWalks[i];
+                        CurrentWalks[i] = CurrentWalks[j];
+                        CurrentWalks[j] = temp;
+                    }
                 }
             }
 
